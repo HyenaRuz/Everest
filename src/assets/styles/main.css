@@ -1,0 +1,92 @@
+/* #app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+} */
+@import '../styles/fonts.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+html {
+  font-size: 10px;
+}
+
+#app {
+  display: grid;
+  min-height: 100vh;
+  margin: 0 0 0 0;
+  grid-template-rows: minmax(60px, auto) 1fr minmax(60px, auto);
+}
+
+header,
+footer,
+main,
+.center {
+  padding-left: calc(50vw - 600px);
+  padding-right: calc(50vw - 600px);
+}
+a {
+  text-decoration: none;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+h3{
+  color: #000;
+  font-family: Gilroy-Light;
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 114.8%; /* 36.736px */
+  letter-spacing: 0.32px;
+  position: relative;
+}
+
+p{
+  color: var(--Dark, #1d1b1b);
+  font-family: Gilroy-Light;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 114.8%; /* 16.072px */
+  letter-spacing: 0.14px;
+}
+
