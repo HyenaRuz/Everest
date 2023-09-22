@@ -44,7 +44,7 @@
       <template v-slot:subject>МЫ ПРЕДЛАГАЕМ</template>
 
       <template v-slot:info>
-        <InformationBlock__info>
+        <InformationBlock__info :widthTitle="800">
           <template v-slot:title
             >Наши услуги:
             <RouterLink :to="{ name: 'home' }">Фондовая биржа</RouterLink>

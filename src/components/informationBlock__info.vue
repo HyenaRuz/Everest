@@ -1,6 +1,6 @@
 <template>
   <div class="info">
-    <h3 class="info__title">
+    <h3 class="info__title" :style="{width: props.widthTitle + 'px'}">
       <slot name="title"></slot>
     </h3>
     <div class="info__holderText" v-if="$slots.text1">
@@ -25,6 +25,9 @@ import MyButton from './MyButton.vue'
 let props = defineProps({
   button: {
     Boolean: false
+  },
+  widthTitle:{
+    Number,
   }
 })
 </script>
@@ -40,7 +43,7 @@ let props = defineProps({
     &::before {
       content: '';
       position: absolute;
-      top: 50%;
+      top: 16px;
       left: -72px;
       border-bottom: 2px solid #01d957;
       width: 52px;
