@@ -1,5 +1,5 @@
 <template>
-  <DefaultLayout>
+  <DefaultLayout :bannerShow="true">
     <TableOfContents v-bind:background-img="img">
       <template v-slot:title>Everest Finance</template>
       <template v-slot:text

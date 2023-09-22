@@ -65,11 +65,12 @@ a {
   text-decoration: none;
 }
 
-div {
+div,
+input {
   box-sizing: border-box;
 }
 
-h3{
+h3 {
   color: #000;
   font-family: Gilroy-Light;
   font-size: 3.2rem;
@@ -80,7 +81,7 @@ h3{
   position: relative;
 }
 
-p{
+p {
   color: var(--Dark, #1d1b1b);
   font-family: Gilroy-Light;
   font-size: 1.4rem;
@@ -89,4 +90,3 @@ p{
   line-height: 114.8%; /* 16.072px */
   letter-spacing: 0.14px;
 }
-

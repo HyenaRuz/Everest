@@ -37,8 +37,6 @@ let props = defineProps({
   width: min-content;
 
   &__title {
-    
-
     &::before {
       content: '';
       position: absolute;
@@ -55,7 +53,7 @@ let props = defineProps({
     width: 520px;
   }
   // &__text {
-  
+
   // }
 }
 </style>

@@ -27,6 +27,11 @@ const router = createRouter({
       path: '/stockExchange',
       name: 'stockExchange',
       component: () => import('../views/StockExchangeView.vue')
+    },
+    {
+      path: '/cryptocurrency',
+      name: 'cryptocurrency',
+      component: () => import('../views/CryptocurrencyView.vue')
     }
   ]
 })

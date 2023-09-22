@@ -54,7 +54,7 @@
       </template>
 
       <template v-slot:holder>
-        <cardLink :picture="imgCard1">
+        <cardLink :picture="imgCard1" :cardLink="'stockExchange'">
           <template v-slot:title> Фондовая биржа </template>
           <template v-slot:text>
             При инвестировании средств через ИИС вы не просто освободитесь от уплаты НДФЛ, но и
@@ -62,7 +62,7 @@
           </template>
         </cardLink>
 
-        <cardLink :picture="imgCard2" :cardLink="'stockExchange'">
+        <cardLink :picture="imgCard2" :cardLink="'cryptocurrency'">
           <template v-slot:title> Криптовалюта</template>
           <template v-slot:text>
             При инвестировании средств через ИИС вы не просто освободитесь от уплаты НДФЛ, но и
