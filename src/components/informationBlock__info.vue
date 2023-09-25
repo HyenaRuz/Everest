@@ -1,6 +1,6 @@
 <template>
   <div class="info">
-    <h3 class="info__title" :style="{width: props.widthTitle + 'px'}">
+    <h3 class="info__title" :style="{ width: props.widthTitle + 'px' }">
       <slot name="title"></slot>
     </h3>
     <div class="info__holderText" v-if="$slots.text1">
@@ -26,8 +26,8 @@ let props = defineProps({
   button: {
     Boolean: false
   },
-  widthTitle:{
-    Number,
+  widthTitle: {
+    Number
   }
 })
 </script>

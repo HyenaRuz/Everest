@@ -19,5 +19,6 @@
   font-style: normal;
   font-weight: 700;
   letter-spacing: 0.14px;
+  cursor: pointer;
 }
 </style>

@@ -26,13 +26,11 @@
         </div>
       </div>
     </div>
-    <img src="../assets/img/img-baner.png" alt="">
+    <img class="banner__picture" src="../assets/img/img-baner.png" alt="" />
   </div>
 </template>
 
-<script setup>
-// import MyButton from './MyButton.vue';
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 .banner {
@@ -40,9 +38,12 @@
   position: relative;
   padding-top: 75px;
   padding-bottom: 75px;
-  display: flex;
-  justify-content: space-between;
 
+  &__picture {
+    position: absolute;
+    top: 93px;
+    right: 101px;
+  }
   &__title {
     position: relative;
     &:before {
@@ -73,6 +74,8 @@
       flex-shrink: 0;
       border-radius: 27px;
       background: var(--Green, #01d957);
+      cursor: pointer;
+      
       p {
         color: #fff;
       }
