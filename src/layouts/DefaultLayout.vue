@@ -17,9 +17,6 @@ let props = defineProps({
     Boolean: false
   }
 })
-
-
-
 </script>
 
 <style lang="scss" scoped></style>

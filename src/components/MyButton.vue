@@ -1,10 +1,14 @@
 <template>
-  <button class="button">
+  <button class="button" @click.prevent="emits('executeMethod')">
     <slot></slot>
   </button>
 </template>
 
-<script setup></script>
+<script setup>
+import { defineEmits } from 'vue'
+
+let emits = defineEmits(['executeMethod'])
+</script>
 
 <style lang="scss" scoped>
 .button {

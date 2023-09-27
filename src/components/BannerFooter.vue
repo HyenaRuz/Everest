@@ -5,12 +5,7 @@
       <p class="banner__text">
         Оставьте заявку и наш менеджер свяжется с Вами в течении нескольких часов
       </p>
-      <form class="banner__form" action="">
-        <input class="banner__input" id="name" type="text" placeholder="Ваше имя" />
-        <input class="banner__input" id="mail" type="text" placeholder="Почта" />
-        <input class="banner__input" id="name" type="text" placeholder="Телефон(необязательно)" />
-        <button><p>Отправить</p></button>
-      </form>
+      <FormInput />
       <div class="banner__link">
         <p class="banner__title">
           Хотите связаться с нами раньше, чем мы Вам перезвоним? Пишите нам в мессенджер. Мы всегда
@@ -30,7 +25,9 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import FormInput from './formInput.vue'
+</script>
 
 <style lang="scss" scoped>
 .banner {
@@ -75,7 +72,7 @@
       border-radius: 27px;
       background: var(--Green, #01d957);
       cursor: pointer;
-      
+
       p {
         color: #fff;
       }

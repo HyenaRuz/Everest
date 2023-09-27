@@ -1,4 +1,5 @@
 <template>
+  <ModalWindow class="modalWindow" v-show="data.showModal" @closeModalWindow="closeModal" />
   <header class="header">
     <img src="../assets/img/Group 23.png" alt="" />
     <nav class="header__control">
@@ -7,13 +8,26 @@
       <RouterLink :to="{ name: 'services' }">Услуги</RouterLink>
       <RouterLink :to="{ name: 'contacts' }">Контакты</RouterLink>
     </nav>
-    <MyButton>Обратный звонок</MyButton>
+    <MyButton @executeMethod="openModal">Обратный звонок</MyButton>
   </header>
 </template>
 
 <script setup>
 import { RouterLink } from 'vue-router'
 import MyButton from './MyButton.vue'
+import ModalWindow from '../components/ModalWindow.vue'
+import { ref } from 'vue'
+
+let data = ref({
+  showModal: false
+})
+
+function openModal() {
+  data.value.showModal = true
+}
+function closeModal() {
+  data.value.showModal = false
+}
 </script>
 
 <style lang="scss" scoped>
@@ -32,10 +46,10 @@ import MyButton from './MyButton.vue'
       font-family: Gilroy-Light;
       font-size: 1.4rem;
       font-style: normal;
-      font-weight: 500;
-      line-height: normal;
-      letter-spacing: 0.14px;
     }
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.14px;
   }
 }
 </style>

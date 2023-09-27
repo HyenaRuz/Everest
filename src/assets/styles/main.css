@@ -90,3 +90,12 @@ p {
   line-height: 114.8%; /* 16.072px */
   letter-spacing: 0.14px;
 }
+h4 {
+  color: #000;
+  font-family: Gilroy-light;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 114.8%; /* 27.552px */
+  letter-spacing: 0.24px;
+}

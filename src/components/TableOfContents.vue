@@ -1,5 +1,7 @@
 <template>
   <div class="holder">
+    <AmBreadcrumbs />
+
     <img :src="props.backgroundImg" alt="" />
     <div class="holder__info">
       <p class="info__title">
