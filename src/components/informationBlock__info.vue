@@ -1,25 +1,17 @@
 <template>
   <div class="info">
     <h3 class="info__title" :style="{ width: props.widthTitle + 'px' }">
-      <slot name="title"></slot>
+      {{ dataInfo.title }}
+      <slot></slot>
     </h3>
-    <div class="info__holderText" v-if="$slots.text1">
-      <p class="info__text" v-if="$slots.text1">
-        <slot name="text1"></slot>
-      </p>
-      <p class="info__text" v-if="$slots.text2">
-        <slot name="text2"></slot>
-      </p>
-      <p class="info__text" v-if="$slots.text3">
-        <slot name="text3"></slot>
-      </p>
+    <div class="info__holderText" v-for="(text, index) in dataInfo.text" :key="index">
+      <p class="info__text">{{ text }}</p>
     </div>
     <MyButton v-if="props.button"> Читать больше </MyButton>
   </div>
 </template>
 
 <script setup>
-// import { ref } from 'vue';
 import MyButton from './MyButton.vue'
 
 let props = defineProps({
@@ -28,8 +20,15 @@ let props = defineProps({
   },
   widthTitle: {
     Number
+  },
+  data: {
+    Object
   }
 })
+
+let dataInfo = { ...props.data }
+
+console.log(props.data)
 </script>
 
 <style lang="scss" scoped>
