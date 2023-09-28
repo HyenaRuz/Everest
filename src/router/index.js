@@ -8,7 +8,7 @@ const router = createRouter({
       name: 'home',
       component: () => import('../views/HomeView.vue'),
       meta: {
-        breadcrumb: 'Home'
+        breadcrumb: 'Главная'
       }
     },
     {
@@ -16,7 +16,7 @@ const router = createRouter({
       name: 'aboutUs',
       component: () => import('../views/AboutUsView.vue'),
       meta: {
-        breadcrumb: 'aboutUs'
+        breadcrumb: 'О нас'
       }
     },
     {
@@ -24,7 +24,7 @@ const router = createRouter({
       name: 'contacts',
       component: () => import('../views/ContactsView.vue'),
       meta: {
-        breadcrumb: 'contacts'
+        breadcrumb: 'Контакты'
       }
     },
     {
@@ -32,7 +32,7 @@ const router = createRouter({
       name: 'services',
       component: () => import('../views/ServicesView.vue'),
       meta: {
-        breadcrumb: 'services'
+        breadcrumb: 'Услуги'
       }
     },
     {
@@ -40,7 +40,7 @@ const router = createRouter({
       name: 'stockExchange',
       component: () => import('../views/StockExchangeView.vue'),
       meta: {
-        breadcrumb: 'stockExchange'
+        breadcrumb: 'Фондовая биржа'
       }
     },
     {
@@ -48,7 +48,7 @@ const router = createRouter({
       name: 'cryptocurrency',
       component: () => import('../views/CryptocurrencyView.vue'),
       meta: {
-        breadcrumb: 'cryptocurrency'
+        breadcrumb: 'Криптовалюта'
       }
     }
   ],

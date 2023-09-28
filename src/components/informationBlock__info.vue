@@ -28,7 +28,7 @@ let props = defineProps({
 
 let dataInfo = { ...props.data }
 
-console.log(props.data)
+// console.log(props.data)
 </script>
 
 <style lang="scss" scoped>

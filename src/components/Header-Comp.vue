@@ -25,8 +25,18 @@ let data = ref({
 function openModal() {
   data.value.showModal = true
 }
-function closeModal() {
-  data.value.showModal = false
+
+const closeModal = (value) => {
+
+  console.log(value)
+  if(value) {
+    let goBack = confirm("your changes will not be saved");
+    if(goBack) {
+      data.value.showModal = false
+    }
+  } else {
+    data.value.showModal = false
+  }
 }
 </script>
 
@@ -35,6 +45,7 @@ function closeModal() {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 
   .header__control {
     display: flex;

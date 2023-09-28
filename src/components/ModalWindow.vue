@@ -16,7 +16,7 @@
         <button
           type="button"
           class="modalWindow__button"
-          @click.prevent="emit('closeModalWindow')"
+          @click.prevent="closeModal"
         ></button>
       </div>
     </div>
@@ -25,13 +25,18 @@
 
 <script setup>
 import FormInput from './formInput.vue'
-import { defineEmits } from 'vue'
+import { defineEmits, ref } from 'vue'
 
 let forvShow = true
 const emit = defineEmits(['closeModalWindow'])
+let valueSub = ref(false);
 
 const onSubmit = (values) => {
-  console.log('values', values)
+  valueSub.value = values
+}
+
+const closeModal = () => {
+  emit ('closeModalWindow', valueSub.value )
 }
 </script>
 

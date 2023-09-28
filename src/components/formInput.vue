@@ -6,6 +6,7 @@
       id="name"
       type="text"
       placeholder="Ваше имя"
+      @change="onSubmit()"
     />
     <input
       v-model="client.email"
@@ -13,6 +14,7 @@
       id="email"
       type="email"
       placeholder="Почта"
+      @change="onSubmit()"
     />
     <input
       v-model="client.phone"
@@ -20,6 +22,7 @@
       id="phone"
       type="tel"
       placeholder="Телефон(необязательно)"
+      @change="onSubmit()"
     />
     <button @click.prevent="onSubmit"><p>Отправить</p></button>
   </form>
@@ -37,7 +40,15 @@ let client = ref({
 const emit = defineEmits(['submit'])
 
 const onSubmit = () => {
-  emit('submit', client.value)
+  emit('submit', checkForm())
+}
+
+const checkForm = () => {
+  if (client.value.email.length > 1 || client.value.name.length > 1 || client.value.phone.length > 1){
+    return true
+  } else {
+    return false
+  }
 }
 </script>
 
