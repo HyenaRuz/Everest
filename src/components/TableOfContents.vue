@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import AmBreadcrumbs from './AmBreadcrumbs.vue';
+import AmBreadcrumbs from './AmBreadcrumbs.vue'
 import MyButton from './MyButton.vue'
 
 let props = defineProps({
@@ -31,7 +31,7 @@ let props = defineProps({
   justify-content: center;
   position: relative;
 
-  &__amBreadcrumbs{
+  &__amBreadcrumbs {
     position: absolute;
     top: 20px;
     left: 0;

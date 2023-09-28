@@ -13,11 +13,7 @@
             Мы вас наберем в ближайшее время!
           </h4>
         </div>
-        <button
-          type="button"
-          class="modalWindow__button"
-          @click.prevent="closeModal"
-        ></button>
+        <button type="button" class="modalWindow__button" @click.prevent="closeModal"></button>
       </div>
     </div>
   </div>
@@ -29,14 +25,14 @@ import { defineEmits, ref } from 'vue'
 
 let forvShow = true
 const emit = defineEmits(['closeModalWindow'])
-let valueSub = ref(false);
+let valueSub = ref(false)
 
 const onSubmit = (values) => {
   valueSub.value = values
 }
 
 const closeModal = () => {
-  emit ('closeModalWindow', valueSub.value )
+  emit('closeModalWindow', valueSub.value)
 }
 </script>
 

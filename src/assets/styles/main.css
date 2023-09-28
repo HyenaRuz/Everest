@@ -66,3 +66,6 @@ h4 {
   line-height: 114.8%; /* 27.552px */
   letter-spacing: 0.24px;
 }
+ul {
+  list-style: none;
+}

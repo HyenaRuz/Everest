@@ -44,7 +44,11 @@ const onSubmit = () => {
 }
 
 const checkForm = () => {
-  if (client.value.email.length > 1 || client.value.name.length > 1 || client.value.phone.length > 1){
+  if (
+    client.value.email.length > 1 ||
+    client.value.name.length > 1 ||
+    client.value.phone.length > 1
+  ) {
     return true
   } else {
     return false

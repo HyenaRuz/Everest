@@ -1,5 +1,5 @@
 <template>
-  <DefaultLayout :bannerShow="true">
+  <DefaultLayout :bannerShow="true" :faqShow="true">
     <TableOfContents v-bind:background-img="img">
       <template v-slot:title>Фондовая биржа</template>
       <template v-slot:text
@@ -9,36 +9,32 @@
       </template>
     </TableOfContents>
 
-    <div class="block1">
-      <InformationBlock>
-        <template v-slot:subject>КРИПТОВАЛЮТА</template>
+    <InformationBlock class="block1">
+      <template v-slot:subject>КРИПТОВАЛЮТА</template>
 
-        <template v-slot:info>
-          <InformationBlock__info :data="section1" />
-          <InformationBlock__info :data="section2" />
-        </template>
+      <template v-slot:info>
+        <InformationBlock__info :data="section1" />
+        <InformationBlock__info :data="section2" />
+      </template>
 
-        <template v-slot:picture>
-          <HolderImg :horizontal="true" :collage__lines="true">
-            <img src="../assets/img/img-cryptocurrency_1.png" alt="" />
-          </HolderImg>
-        </template>
-      </InformationBlock>
-    </div>
+      <template v-slot:picture>
+        <HolderImg :horizontal="true" :collage__lines="true">
+          <img src="../assets/img/img-cryptocurrency_1.png" alt="" />
+        </HolderImg>
+      </template>
+    </InformationBlock>
 
-    <div class="block2">
-      <InformationBlock :reverse="true">
-        <template v-slot:info>
-          <InformationBlock__info :data="section3" />
-        </template>
+    <InformationBlock class="block2" :reverse="true">
+      <template v-slot:info>
+        <InformationBlock__info :data="section3" />
+      </template>
 
-        <template v-slot:picture>
-          <HolderImg :horizontal="true">
-            <img src="../assets/img/img-cryptocurrency_2.png" alt="" />
-          </HolderImg>
-        </template>
-      </InformationBlock>
-    </div>
+      <template v-slot:picture>
+        <HolderImg :horizontal="true">
+          <img src="../assets/img/img-cryptocurrency_2.png" alt="" />
+        </HolderImg>
+      </template>
+    </InformationBlock>
   </DefaultLayout>
 </template>
 

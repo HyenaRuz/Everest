@@ -7,7 +7,7 @@
     <div class="info__holderText" v-for="(text, index) in dataInfo.text" :key="index">
       <p class="info__text">{{ text }}</p>
     </div>
-    <MyButton v-if="props.button"> Читать больше </MyButton>
+    <MyButton v-if="props.button" :defaultButton="true"> Читать больше </MyButton>
   </div>
 </template>
 
@@ -52,7 +52,7 @@ let dataInfo = { ...props.data }
     display: flex;
     flex-direction: column;
     gap: 25px;
-    width: 520px;
+    width: 475px;
   }
   // &__text {
 

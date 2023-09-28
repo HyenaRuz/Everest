@@ -8,7 +8,7 @@
       <RouterLink :to="{ name: 'services' }">Услуги</RouterLink>
       <RouterLink :to="{ name: 'contacts' }">Контакты</RouterLink>
     </nav>
-    <MyButton @executeMethod="openModal">Обратный звонок</MyButton>
+    <MyButton @executeMethod="openModal" :defaultButton="true">Обратный звонок</MyButton>
   </header>
 </template>
 
@@ -27,11 +27,10 @@ function openModal() {
 }
 
 const closeModal = (value) => {
-
   console.log(value)
-  if(value) {
-    let goBack = confirm("your changes will not be saved");
-    if(goBack) {
+  if (value) {
+    let goBack = confirm('your changes will not be saved')
+    if (goBack) {
       data.value.showModal = false
     }
   } else {

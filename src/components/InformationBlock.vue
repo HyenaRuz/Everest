@@ -53,8 +53,7 @@ let props = defineProps({
   }
   &_reverse {
     flex-direction: row-reverse;
-    max-width: 1050px;
-    margin: 0 auto;
+    justify-content: space-around;
   }
   &_column {
     flex-direction: column;
