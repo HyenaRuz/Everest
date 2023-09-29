@@ -1,14 +1,5 @@
 <template>
-  <DefaultLayout :bannerShow="true" :faqShow="true">
-    <TableOfContents v-bind:background-img="img">
-      <template v-slot:title>Фондовая биржа</template>
-      <template v-slot:text
-        >Хорошо продуманный функционал программы позволяет настроить торговую систему согласно Вашим
-        задачам — внешний вид программы, отсортировать и выбрать необходимые инструменты для
-        торговли, сделать оценку портфеля.
-      </template>
-    </TableOfContents>
-
+  <DefaultLayout :bannerShow="true" :faqShow="true" :tableShow="true" :tableBackgroundImg="img" :tableData="tabl" :tableBattonData="{text: 'Оставить заявку', isActive: true }">
     <InformationBlock class="block1">
       <template v-slot:subject>КРИПТОВАЛЮТА</template>
 
@@ -39,7 +30,6 @@
 </template>
 
 <script setup>
-import TableOfContents from '../components/TableOfContents.vue'
 import img from '../assets/img/img-Title3.png'
 import InformationBlock from '../components/InformationBlock.vue'
 import HolderImg from '../components/holderImg.vue'
@@ -69,6 +59,12 @@ const section3 = {
     'Программа ИИС действует с начала 2015 года, а на сегодня физическими лицами уже открыто более 3 миллионов инвестсчетов. При значительном объеме активов на ИИС более 246 миллиардов рублей появляется основание задуматься над необходимостью открытия ИИС и выбора надежного партера для этой задачи.'
   ]
 }
+const tabl = {
+  title: 'Фондовая биржа',
+  text: [
+  'Хорошо продуманный функционал программы позволяет настроить торговую систему согласно Вашим задачам — внешний вид программы, отсортировать и выбрать необходимые инструменты для торговли, сделать оценку портфеля.',
+  ]
+}
 </script>
 
 <style lang="scss" scoped>
@@ -76,6 +72,6 @@ const section3 = {
   margin-top: 161px;
 }
 .block2 {
-  margin: 155px 0 150px;
+  margin-top: 155px;
 }
 </style>

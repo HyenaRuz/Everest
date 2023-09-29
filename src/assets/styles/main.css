@@ -27,6 +27,7 @@ main,
 .center {
   padding-left: calc(50vw - 600px);
   padding-right: calc(50vw - 600px);
+  position: relative;
 }
 a {
   text-decoration: none;
@@ -65,6 +66,15 @@ h4 {
   font-weight: 600;
   line-height: 114.8%; /* 27.552px */
   letter-spacing: 0.24px;
+}
+h2{
+  color: var(--white, #fff);
+  font-family: Gilroy-Light;
+  font-size: 5.0rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 114.8%; /* 57.4px */
+  letter-spacing: 0.5px;
 }
 ul {
   list-style: none;

@@ -1,32 +1,37 @@
 <template>
-  <div class="holder">
-    <AmBreadcrumbs class="holder__amBreadcrumbs" />
+  <div class="holder " :style="{ height: props.height + 'px'}">
     <img :src="props.backgroundImg" alt="" />
-    <div class="holder__info">
-      <p class="holder__title">
-        <slot name="title"></slot>
-      </p>
-      <p class="holder__text">
-        <slot name="text"></slot>
-      </p>
-      <MyButton>Узнать подробнее</MyButton>
+    <div class="holder__info center">
+      <!-- <AmBreadcrumbs class="holder__amBreadcrumbs" /> -->
+      <h2 class="holder__title">
+        {{ props.data.title }}
+      </h2>
+      <div class="holder__texts"  v-for="(text, index) in props.data.text" :key="index">
+        <p class="holder__text">{{ text }}</p>
+      </div>
+      <MyButton :defaultButton="true" v-if="batton.isActive">{{ batton.text }}</MyButton>
     </div>
   </div>
 </template>
 
 <script setup>
-import AmBreadcrumbs from './AmBreadcrumbs.vue'
+// import AmBreadcrumbs from './AmBreadcrumbs.vue'
 import MyButton from './MyButton.vue'
 
 let props = defineProps({
-  backgroundImg: {}
+  backgroundImg: {},
+  batton:{
+    text:'',
+    isActive: false,
+  }.required = false,
+  data: {
+    Object
+  }
 })
 </script>
 
 <style lang="scss" scoped>
 .holder {
-  background-repeat: no-repeat;
-  height: 501px;
   display: flex;
   justify-content: center;
   position: relative;
@@ -34,29 +39,22 @@ let props = defineProps({
   &__amBreadcrumbs {
     position: absolute;
     top: 20px;
-    left: 0;
   }
   img {
     display: block;
-    position: absolute;
     z-index: -10;
     align-items: center;
   }
   &__info {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
     justify-content: center;
+    position: absolute;
   }
   &__title {
-    color: var(--white, #fff);
-    font-family: Gilroy-Light;
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 114.8%; /* 57.4px */
-    letter-spacing: 0.5px;
     max-width: 711px;
   }
   &__text {

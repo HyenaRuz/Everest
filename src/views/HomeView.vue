@@ -1,13 +1,5 @@
 <template>
-  <DefaultLayout>
-    <TableOfContents v-bind:background-img="img">
-      <template v-slot:title>Финансовые решения для достижения ваших целей</template>
-      <template v-slot:text
-        >Хорошо продуманный функционал программы позволяет настроить торговую систему согласно Вашим
-        задачам — внешний вид программы, отсортировать и выбрать необходимые инструменты для
-        торговли, сделать оценку портфеля.</template
-      >
-    </TableOfContents>
+  <DefaultLayout :tableShow="true" :tableBackgroundImg="img" :tableData="tabl" :tableBattonData="{text: 'Узнать подробнее', isActive: true }">
 
     <InformationBlock class="block1">
       <template v-slot:subject>О НАС</template>
@@ -27,8 +19,8 @@
       <template v-slot:info>
         <InformationBlock__info :widthTitle="800">
           Наши услуги:
-          <RouterLink :to="{ name: 'home' }">Фондовая биржа</RouterLink>
-          и <RouterLink :to="{ name: 'stockExchange' }">Криптовалюта</RouterLink>
+          <RouterLink :to="{ name: 'stockExchange' }">Фондовая биржа</RouterLink>
+          и <RouterLink :to="{ name: 'cryptocurrency' }">Криптовалюта</RouterLink>
         </InformationBlock__info>
       </template>
 
@@ -59,7 +51,6 @@ import imgCard1 from '../assets/img/img-card1.png'
 import imgCard2 from '../assets/img/img-card2.png'
 
 import DefaultLayout from '../layouts/DefaultLayout.vue'
-import TableOfContents from '../components/TableOfContents.vue'
 import cardLink from '../components/cardLink.vue'
 import InformationBlock from '../components/InformationBlock.vue'
 import HolderImg from '../components/holderImg.vue'
@@ -72,6 +63,12 @@ const EverestFinance = {
     'Хорошо продуманный функционал программы позволяет настроить торговую систему согласно. Вашим задачам — внешний вид программы, отсортировать и выбрать необходимые инструменты для торговли, сделать оценку портфеля.',
     'Программа ИИС действует с начала 2015 года, а на сегодня физическими лицами уже открыто более 3 миллионов инвестсчетов. При значительном объеме активов на ИИС более 246 миллиардов рублей появляется основание задуматься над необходимостью открытия ИИС и выбора надежного партера для этой задачи.',
     'При инвестировании средств через ИИС вы не просто освободитесь от уплаты НДФЛ, но и сможете претендовать на возврат 13% от уплаченного ранее налога.'
+  ]
+}
+const tabl = {
+  title: 'Финансовые решения для достижения ваших целей',
+  text: [
+  'Хорошо продуманный функционал программы позволяет настроить торговую систему согласно Вашим задачам — внешний вид программы, отсортировать и выбрать необходимые инструменты для торговли, сделать оценку портфеля.',
   ]
 }
 </script>

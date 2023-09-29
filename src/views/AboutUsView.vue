@@ -1,14 +1,5 @@
 <template>
-  <DefaultLayout :bannerShow="true">
-    <TableOfContents v-bind:background-img="img">
-      <template v-slot:title>Everest Finance</template>
-      <template v-slot:text
-        >Хорошо продуманный функционал программы позволяет настроить торговую систему согласно Вашим
-        задачам — внешний вид программы, отсортировать и выбрать необходимые инструменты для
-        торговли, сделать оценку портфеля.
-      </template>
-    </TableOfContents>
-
+  <DefaultLayout :bannerShow="true" :tableShow="true" :tableBackgroundImg="img" :tableData="tabl" :tableBattonData="{text: '', isActive: false }">
     <InformationBlock class="informationBlock">
       <template v-slot:subject>НАШЕ ПРЕИМУЩЕСТВО - ЭТО</template>
       <template v-slot:info>
@@ -35,7 +26,6 @@
 </template>
 
 <script setup>
-import TableOfContents from '../components/TableOfContents.vue'
 import img from '../assets/img/img-Title2.png'
 import DefaultLayout from '../layouts/DefaultLayout.vue'
 import InformationBlock from '../components/InformationBlock.vue'
@@ -55,6 +45,12 @@ const section2 = {
   text: [
     'Хорошо продуманный функционал программы позволяет настроить торговую систему согласно Вашим задачам — внешний вид программы, отсортировать и выбрать необходимые инструменты для торговли, сделать оценку портфеля.',
     'Программа ИИС действует с начала 2015 года, а на сегодня физическими лицами уже открыто более 3 миллионов инвестсчетов. При значительном объеме активов на ИИС более 246 миллиардов рублей появляется основание задуматься над необходимостью открытия ИИС и выбора надежного партера для этой задачи.'
+  ]
+}
+const tabl = {
+  title: 'Everest Finance',
+  text: [
+  'Хорошо продуманный функционал программы позволяет настроить торговую систему согласно Вашим задачам — внешний вид программы, отсортировать и выбрать необходимые инструменты для торговли, сделать оценку портфеля.',
   ]
 }
 </script>
