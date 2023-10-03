@@ -1,39 +1,33 @@
 <template>
-  <DefaultLayout :bannerShow="true" :faqShow="true" :tableShow="true" :tableBackgroundImg="img" :tableData="tabl" :tableBattonData="{text: 'Оставить заявку', isActive: true }">
-    <InformationBlock class="block1">
-      <template v-slot:subject>КРИПТОВАЛЮТА</template>
+  <DefaultLayout
+    :bannerShow="true"
+    :faqShow="true"
+    :tableShow="true"
+    :tableBackgroundImg="img"
+    :tableData="tabl"
+    :tableBattonData="{ text: 'Оставить заявку', isActive: true }"
+  >
+    <InformationBlock class="block1"
+      :subject="'КРИПТОВАЛЮТА'"
+      :dataInfo="[section1, section2]"
+      :picture="imgCryptocurrency_1"
+      :imgHorizontal="true"
+      :imgCollageLines="true"
+    />
 
-      <template v-slot:info>
-        <InformationBlock__info :data="section1" />
-        <InformationBlock__info :data="section2" />
-      </template>
-
-      <template v-slot:picture>
-        <HolderImg :horizontal="true" :collage__lines="true">
-          <img src="../assets/img/img-cryptocurrency_1.png" alt="" />
-        </HolderImg>
-      </template>
-    </InformationBlock>
-
-    <InformationBlock class="block2" :reverse="true">
-      <template v-slot:info>
-        <InformationBlock__info :data="section3" />
-      </template>
-
-      <template v-slot:picture>
-        <HolderImg :horizontal="true">
-          <img src="../assets/img/img-cryptocurrency_2.png" alt="" />
-        </HolderImg>
-      </template>
-    </InformationBlock>
+    <InformationBlock class="block2" 
+      :reverse="true"
+      :dataInfo="[section3]"
+      :picture="imgCryptocurrency_1"
+      :imgHorizontal="true"
+    />
   </DefaultLayout>
 </template>
 
 <script setup>
 import img from '../assets/img/img-Title3.png'
+import imgCryptocurrency_1 from '../assets/img/img-cryptocurrency_1.png'
 import InformationBlock from '../components/InformationBlock.vue'
-import HolderImg from '../components/holderImg.vue'
-import InformationBlock__info from '../components/informationBlock__info.vue'
 import DefaultLayout from '../layouts/DefaultLayout.vue'
 
 const section1 = {
@@ -62,7 +56,7 @@ const section3 = {
 const tabl = {
   title: 'Фондовая биржа',
   text: [
-  'Хорошо продуманный функционал программы позволяет настроить торговую систему согласно Вашим задачам — внешний вид программы, отсортировать и выбрать необходимые инструменты для торговли, сделать оценку портфеля.',
+    'Хорошо продуманный функционал программы позволяет настроить торговую систему согласно Вашим задачам — внешний вид программы, отсортировать и выбрать необходимые инструменты для торговли, сделать оценку портфеля.'
   ]
 }
 </script>

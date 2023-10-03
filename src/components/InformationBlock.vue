@@ -2,31 +2,63 @@
   <div
     class="informationBlock"
     :class="{
-      informationBlock_reverse: props.reverse,
-      informationBlock_column: props.columnDirection
+      informationBlock_reverse: reverse,
+      informationBlock_column: columnDirection
     }"
   >
-    <p class="informationBlock__subject">
-      <slot name="subject"></slot>
-    </p>
+    <p class="informationBlock__subject">{{ subject }}</p>
     <div class="informationBlock__holderInfo">
+      <InformationBlock__info :button="buttonInfo"  v-for="(info, index) in dataInfo" :key="index" :data="info"/>
       <slot name="info"></slot>
     </div>
-    <slot name="picture"></slot>
+
+    <HolderImg v-if="picture"
+     :horizontal="imgHorizontal" 
+     :vertical_three_corners="imgVerticalThreeCorners" 
+     :collage__lines="imgCollageLines">
+          <img :src="picture" alt="" />
+    </HolderImg>
     <div class="informationBlock__holderCard" v-if="$slots.holder">
-      <slot name="holder" v-if="$slots.holder"></slot>
+      <slot name="holder"></slot>
     </div>
   </div>
 </template>
 
 <script setup>
-let props = defineProps({
+import InformationBlock__info from '../components/informationBlock__info.vue'
+import HolderImg from '../components/holderImg.vue'
+
+defineProps({
   reverse: {
     Boolean: false
   },
   columnDirection: {
     Boolean: false
+  },
+  subject: {
+    type: String
+  },
+  dataInfo: {
+    type: Array
+  },
+  buttonInfo: {
+    type: Boolean
+  },
+  picture: {
+  },
+  imgCollageLines: {
+    type:Boolean
+  },
+  imgHorizontal: {
+    type:Boolean
+  },
+  imgVertical: {
+    type:Boolean
+  },
+  imgVerticalThreeCorners: {
+    type:Boolean
   }
+
 })
 </script>
 

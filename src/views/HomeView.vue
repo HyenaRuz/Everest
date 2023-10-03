@@ -1,20 +1,20 @@
 <template>
-  <DefaultLayout :tableShow="true" :tableBackgroundImg="img" :tableData="tabl" :tableBattonData="{text: 'Узнать подробнее', isActive: true }">
+  <DefaultLayout
+    :tableShow="true"
+    :tableBackgroundImg="img"
+    :tableData="tabl"
+    :tableBattonData="{ text: 'Узнать подробнее', isActive: true }">
 
-    <InformationBlock class="block1">
-      <template v-slot:subject>О НАС</template>
-      <template v-slot:info>
-        <InformationBlock__info :button="true" :data="EverestFinance" />
-      </template>
-      <template v-slot:picture>
-        <HolderImg :horizontal="true">
-          <img src="../assets/img/img-home-1.png" alt="" />
-        </HolderImg>
-      </template>
-    </InformationBlock>
+    <InformationBlock class="block1"
+     :subject="'О НАС'" 
+     :dataInfo="[EverestFinance]" 
+     :buttonInfo="true"
+     :picture="imgHome"
+    />
 
-    <InformationBlock :columnDirection="true" class="block2">
-      <template v-slot:subject>МЫ ПРЕДЛАГАЕМ</template>
+    <InformationBlock class="block2"
+     :columnDirection="true"
+     :subject="'МЫ ПРЕДЛАГАЕМ'">
 
       <template v-slot:info>
         <InformationBlock__info :widthTitle="800">
@@ -47,13 +47,13 @@
 
 <script setup>
 import img from '../assets/img/Rectangle3.png'
+import imgHome from '../assets/img/img-home-1.png'
 import imgCard1 from '../assets/img/img-card1.png'
 import imgCard2 from '../assets/img/img-card2.png'
 
 import DefaultLayout from '../layouts/DefaultLayout.vue'
 import cardLink from '../components/cardLink.vue'
 import InformationBlock from '../components/InformationBlock.vue'
-import HolderImg from '../components/holderImg.vue'
 import InformationBlock__info from '../components/informationBlock__info.vue'
 import { RouterLink } from 'vue-router'
 
@@ -68,7 +68,7 @@ const EverestFinance = {
 const tabl = {
   title: 'Финансовые решения для достижения ваших целей',
   text: [
-  'Хорошо продуманный функционал программы позволяет настроить торговую систему согласно Вашим задачам — внешний вид программы, отсортировать и выбрать необходимые инструменты для торговли, сделать оценку портфеля.',
+    'Хорошо продуманный функционал программы позволяет настроить торговую систему согласно Вашим задачам — внешний вид программы, отсортировать и выбрать необходимые инструменты для торговли, сделать оценку портфеля.'
   ]
 }
 </script>

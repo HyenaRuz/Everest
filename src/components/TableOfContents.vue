@@ -1,12 +1,11 @@
 <template>
-  <div class="holder " :style="{ height: props.height + 'px'}">
+  <div class="holder" :style="{ height: props.height + 'px' }">
     <img :src="props.backgroundImg" alt="" />
     <div class="holder__info center">
-      <!-- <AmBreadcrumbs class="holder__amBreadcrumbs" /> -->
       <h2 class="holder__title">
         {{ props.data.title }}
       </h2>
-      <div class="holder__texts"  v-for="(text, index) in props.data.text" :key="index">
+      <div class="holder__texts" v-for="(text, index) in props.data.text" :key="index">
         <p class="holder__text">{{ text }}</p>
       </div>
       <MyButton :defaultButton="true" v-if="batton.isActive">{{ batton.text }}</MyButton>
@@ -15,15 +14,11 @@
 </template>
 
 <script setup>
-// import AmBreadcrumbs from './AmBreadcrumbs.vue'
 import MyButton from './MyButton.vue'
 
 let props = defineProps({
   backgroundImg: {},
-  batton:{
-    text:'',
-    isActive: false,
-  }.required = false,
+  batton: {},
   data: {
     Object
   }

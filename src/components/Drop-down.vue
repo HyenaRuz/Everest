@@ -83,9 +83,9 @@ const openAnswer = () => {
     position: absolute;
     transition: all 300ms;
     overflow: hidden;
-    
+
     &-open {
-        overflow: hidden;
+      overflow: hidden;
       position: relative;
       opacity: 1;
       height: max-content;

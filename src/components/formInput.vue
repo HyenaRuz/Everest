@@ -1,59 +1,55 @@
 <template>
-  <form @submit.prevent="backCall" class="formInput" action="">
+  <form class="formInput" action="">
     <input
-      v-model="client.name"
       class="formInput__input"
       id="name"
       type="text"
       placeholder="Ваше имя"
-      @change="onSubmit()"
+      :value="name"
+      @input="$emit('update:name', $event.target.value)"
     />
     <input
-      v-model="client.email"
       class="formInput__input"
       id="email"
       type="email"
       placeholder="Почта"
-      @change="onSubmit()"
+      :value="email"
+      @input="$emit('update:email', $event.target.value)"
     />
     <input
-      v-model="client.phone"
       class="formInput__input"
       id="phone"
       type="tel"
       placeholder="Телефон(необязательно)"
-      @change="onSubmit()"
+      :value="phone"
+      @input="$emit('update:phone', $event.target.value)"
     />
     <button @click.prevent="onSubmit"><p>Отправить</p></button>
   </form>
 </template>
 
 <script setup>
-import { ref, defineEmits } from 'vue'
+import { defineEmits, defineProps } from 'vue'
 
-let client = ref({
-  email: '',
-  name: '',
-  phone: ''
+const props = defineProps({
+  name: String,
+  email: String,
+  phone: String
 })
+defineEmits(['submit', 'inputValue', 'update:phone', 'update:email', 'update:name'])
 
-const emit = defineEmits(['submit'])
-
-const onSubmit = () => {
-  emit('submit', checkForm())
-}
-
-const checkForm = () => {
-  if (
-    client.value.email.length > 1 ||
-    client.value.name.length > 1 ||
-    client.value.phone.length > 1
-  ) {
-    return true
-  } else {
-    return false
-  }
-}
+// const checkForm = () => {
+//   if (
+//     props.email.length > 0 ||
+//     props.name.length > 0 ||
+//     props.phone.length > 0
+//   ) {
+//     return true
+//   } else {
+//     return false
+//   }
+// }
+const onSubmit = () => {}
 </script>
 
 <style lang="scss" scoped>

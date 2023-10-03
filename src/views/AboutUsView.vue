@@ -1,36 +1,27 @@
 <template>
-  <DefaultLayout :bannerShow="true" :tableShow="true" :tableBackgroundImg="img" :tableData="tabl" :tableBattonData="{text: '', isActive: false }">
-    <InformationBlock class="informationBlock">
-      <template v-slot:subject>НАШЕ ПРЕИМУЩЕСТВО - ЭТО</template>
-      <template v-slot:info>
-        <InformationBlock__info :data="section1" />
-      </template>
-      <template v-slot:picture>
-        <HolderImg :horizontal="true">
-          <img src="../assets/img/img-AboutUs_1.png" alt="" />
-        </HolderImg>
-      </template>
-    </InformationBlock>
+  <DefaultLayout :bannerShow="true" :tableShow="true" :tableBackgroundImg="img" :tableData="tabl">
+    <InformationBlock class="informationBlock"
+      :subject="'НАШЕ ПРЕИМУЩЕСТВО - ЭТО'"
+      :dataInfo="[section1]"
+      :picture="imgAboutUs_1"
+      :imgHorizontal="true"
+    />
 
-    <InformationBlock class="informationBlock" :reverse="true">
-      <template v-slot:info>
-        <InformationBlock__info :data="section2" />
-      </template>
-      <template v-slot:picture>
-        <HolderImg :vertical_three_corners="true">
-          <img src="../assets/img/img-AboutUs-2.png" alt="" />
-        </HolderImg>
-      </template>
-    </InformationBlock>
+    <InformationBlock class="informationBlock" 
+      :reverse="true"
+      :dataInfo="[section2]"
+      :picture="imgAboutUs_2"
+      :imgVerticalThreeCorners="true"
+    />
   </DefaultLayout>
 </template>
 
 <script setup>
 import img from '../assets/img/img-Title2.png'
+import imgAboutUs_1 from '../assets/img/img-AboutUs_1.png'
+import imgAboutUs_2 from '../assets/img/img-AboutUs-2.png'
 import DefaultLayout from '../layouts/DefaultLayout.vue'
 import InformationBlock from '../components/InformationBlock.vue'
-import InformationBlock__info from '../components/informationBlock__info.vue'
-import HolderImg from '../components/holderImg.vue'
 
 const section1 = {
   title: 'Ваш легкий старт в мире финансов',
@@ -50,7 +41,7 @@ const section2 = {
 const tabl = {
   title: 'Everest Finance',
   text: [
-  'Хорошо продуманный функционал программы позволяет настроить торговую систему согласно Вашим задачам — внешний вид программы, отсортировать и выбрать необходимые инструменты для торговли, сделать оценку портфеля.',
+    'Хорошо продуманный функционал программы позволяет настроить торговую систему согласно Вашим задачам — внешний вид программы, отсортировать и выбрать необходимые инструменты для торговли, сделать оценку портфеля.'
   ]
 }
 </script>

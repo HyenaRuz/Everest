@@ -18,16 +18,20 @@
 <script setup>
 let props = defineProps({
   collage__lines: {
-    Boolean: false
+    type:Boolean,
+    default: false
   },
   horizontal: {
-    Boolean: false
+    type:Boolean,
+    default: false
   },
   vertical: {
-    Boolean: false
+    type:Boolean,
+    default: false
   },
   vertical_three_corners: {
-    Boolean: false
+    type:Boolean,
+    default: false
   }
 })
 </script>
