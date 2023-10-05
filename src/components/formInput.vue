@@ -1,5 +1,5 @@
 <template>
-  <form class="formInput" action="">
+  <form class="formInput" action="" @submit.prevent="checkForm">
     <input
       class="formInput__input"
       id="name"
@@ -24,32 +24,19 @@
       :value="phone"
       @input="$emit('update:phone', $event.target.value)"
     />
-    <button @click.prevent="onSubmit"><p>Отправить</p></button>
+    <button type="submit"><p>Отправить</p></button>
   </form>
 </template>
 
 <script setup>
 import { defineEmits, defineProps } from 'vue'
 
-const props = defineProps({
+defineProps({
   name: String,
   email: String,
   phone: String
 })
-defineEmits(['submit', 'inputValue', 'update:phone', 'update:email', 'update:name'])
-
-// const checkForm = () => {
-//   if (
-//     props.email.length > 0 ||
-//     props.name.length > 0 ||
-//     props.phone.length > 0
-//   ) {
-//     return true
-//   } else {
-//     return false
-//   }
-// }
-const onSubmit = () => {}
+defineEmits(['update:phone', 'update:email', 'update:name'])
 </script>
 
 <style lang="scss" scoped>
@@ -80,7 +67,7 @@ const onSubmit = () => {}
     padding: 16px 15px;
 
     color: #1d1b1b;
-    font-family: Gilroy-Light;
+    font-family: Gilroy;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -88,7 +75,7 @@ const onSubmit = () => {}
     letter-spacing: 0.14px;
     &::placeholder {
       color: #1d1b1b;
-      font-family: Gilroy-Light;
+      font-family: Gilroy;
       font-size: 14px;
       font-style: normal;
       font-weight: 400;

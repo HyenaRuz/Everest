@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="info">
     <h3 class="info__title" :style="{ width: props.widthTitle + 'px' }">
@@ -12,7 +13,7 @@
 </template>
 
 <script setup>
-import MyButton from '../components/MyButton.vue'
+import MyButton from '@/components/MyButton.vue'
 
 let props = defineProps({
   button: {

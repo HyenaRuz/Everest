@@ -3,7 +3,10 @@
     :class="{
       collage_horizontal: props.horizontal,
       collage_vertical: props.vertical,
-      'collage_vertical_three-corners': props.vertical_three_corners
+      'collage_vertical_three-corners': props.vertical_three_corners,
+      'collage-icon': props.icon,
+      'collage-icon-reverse': props.icon_reverse,
+      'collage_horizontal_three-corners': props.horizontal_three_corners,
     }"
     class="collage"
   >
@@ -30,6 +33,18 @@ let props = defineProps({
     default: false
   },
   vertical_three_corners: {
+    type:Boolean,
+    default: false
+  },
+  horizontal_three_corners: {
+    type:Boolean,
+    default: false
+  },
+  icon: {
+    type:Boolean,
+    default: false
+  },
+  icon_reverse: {
     type:Boolean,
     default: false
   }
@@ -76,7 +91,27 @@ let props = defineProps({
   max-width: 467px;
   // max-height: 756px;
 }
+.collage_horizontal_three-corners {
+  border-radius: 80px 0px 80px 80px;
+  max-width: 467px;
+  // max-height: 756px;
+}
 .collage_horizontal {
   border-radius: 80px 0px;
+}
+.collage-icon{
+  width: 278px;
+  height: 171px;
+  opacity: 0.8;
+  background: var(--Green, #01D957);
+  box-shadow: 0px 10px 50px 0px rgba(48, 41, 217, 0.30);
+  display: flex;
+  justify-content: space-between;
+  gap: 0;
+  padding: 50px;
+  border-radius: 80px 0px 80px 80px;
+  &-reverse{
+    border-radius: 80px 80px 80px 0px;
+  }
 }
 </style>

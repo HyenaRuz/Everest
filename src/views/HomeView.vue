@@ -53,8 +53,8 @@ import imgCard2 from '../assets/img/img-card2.png'
 
 import DefaultLayout from '../layouts/DefaultLayout.vue'
 import cardLink from '../components/cardLink.vue'
-import InformationBlock from '../components/InformationBlock.vue'
-import InformationBlock__info from '../components/informationBlock__info.vue'
+import InformationBlock from '../components/InformationBlock'
+import InformationBlock__info from '../components/InformationBlock/components/Info.vue'
 import { RouterLink } from 'vue-router'
 
 const EverestFinance = {
@@ -74,16 +74,12 @@ const tabl = {
 </script>
 
 <style lang="scss" scoped>
-.block1 {
-  margin-top: 184px;
-}
 .block2 {
-  margin-top: 150px;
-  margin-bottom: 139px;
+  margin-top: 190px;
 }
 a {
   color: var(--Green, #01d957);
-  font-family: Gilroy-Light;
+  font-family: Gilroy;
   font-size: 3.2rem;
   font-style: normal;
   font-weight: 600;

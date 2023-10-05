@@ -1,7 +1,9 @@
 <template>
   <ModalWindow class="modalWindow" v-show="data.showModal" @closeModalWindow="closeModal" />
   <header class="header">
-    <img src="../assets/img/Group 23.png" alt="" />
+    <RouterLink :to="{ name: 'home' }">
+      <img src="../assets/img/Group 23.png" alt="" />
+    </RouterLink>
     <nav class="header__control">
       <RouterLink :to="{ name: 'home' }">Главная</RouterLink>
       <RouterLink :to="{ name: 'aboutUs' }">О нас</RouterLink>
@@ -45,7 +47,7 @@ const closeModal = () => {
 
     a {
       color: var(--Dark, #1d1b1b);
-      font-family: Gilroy-Light;
+      font-family: Gilroy;
       font-size: 1.4rem;
       font-style: normal;
     }

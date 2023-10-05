@@ -58,7 +58,7 @@ let props = defineProps({
   }
   &__title {
     color: var(--Green, #01d957);
-    font-family: Gilroy-Light;
+    font-family: Gilroy;
     font-size: 2.4rem;
     font-style: normal;
     font-weight: 600;

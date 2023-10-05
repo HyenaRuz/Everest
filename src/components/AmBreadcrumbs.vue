@@ -19,7 +19,7 @@
   }
   &__my-custom-crumb {
     color: var(--white, #fff);
-    font-family: Gilroy-Light;
+    font-family: Gilroy;
     font-size: 1.4rem;
     font-style: normal;
     font-weight: 400;

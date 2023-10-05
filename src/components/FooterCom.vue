@@ -1,7 +1,9 @@
 <template>
   <footer class="footer">
     <div class="footer__holder">
-      <img src="../assets/img/Group 23.png" alt="" />
+      <RouterLink :to="{ name: 'home' }">
+        <img src="../assets/img/Group 23.png" alt="" />
+      </RouterLink>
       <div class="footer__control">
         <RouterLink :to="{ name: 'home' }">Главная</RouterLink>
         <RouterLink :to="{ name: 'aboutUs' }">О нас</RouterLink>
@@ -24,7 +26,6 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
-//   import MyButton from './MyButton.vue'
 </script>
 
 <style lang="scss" scoped>
@@ -46,7 +47,7 @@ import { RouterLink } from 'vue-router'
 
       a {
         color: var(--Dark, #1d1b1b);
-        font-family: Gilroy-Light;
+        font-family: Gilroy;
         font-size: 1.4rem;
         font-style: normal;
         font-weight: 500;

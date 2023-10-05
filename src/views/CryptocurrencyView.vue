@@ -27,7 +27,7 @@
 <script setup>
 import img from '../assets/img/img-Title3.png'
 import imgCryptocurrency_1 from '../assets/img/img-cryptocurrency_1.png'
-import InformationBlock from '../components/InformationBlock.vue'
+import InformationBlock from '../components/InformationBlock'
 import DefaultLayout from '../layouts/DefaultLayout.vue'
 
 const section1 = {
@@ -62,9 +62,6 @@ const tabl = {
 </script>
 
 <style lang="scss" scoped>
-.block1 {
-  margin-top: 161px;
-}
 .block2 {
   margin-top: 155px;
 }

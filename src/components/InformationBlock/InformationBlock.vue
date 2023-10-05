@@ -8,8 +8,11 @@
   >
     <p class="informationBlock__subject">{{ subject }}</p>
     <div class="informationBlock__holderInfo">
-      <InformationBlock__info :button="buttonInfo"  v-for="(info, index) in dataInfo" :key="index" :data="info"/>
-      <slot name="info"></slot>
+      <InformationBlock__info class="informationBlock__info" :button="buttonInfo"  v-for="(info, index) in dataInfo" :key="index" :data="info"/>
+      <slot></slot>
+      <div class="informationBlock__info">
+        <slot  name="info"></slot>
+      </div>
     </div>
 
     <HolderImg v-if="picture"
@@ -25,8 +28,8 @@
 </template>
 
 <script setup>
-import InformationBlock__info from '../components/informationBlock__info.vue'
-import HolderImg from '../components/holderImg.vue'
+import InformationBlock__info from './components/Info.vue'
+import HolderImg from '@/components/holderImg.vue'
 
 defineProps({
   reverse: {
@@ -70,18 +73,23 @@ defineProps({
   align-items: center;
   position: relative;
 
+  &__info{
+    margin-left: 72px;
+  }
   &__subject {
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     color: #d2d2d2;
+    font-weight: 900;
+    letter-spacing: 1.05px;
   }
   &__holderInfo {
     display: flex;
     flex-direction: column;
     gap: 50px;
-    margin: 36px 0 0 72px;
+    margin: 36px 0 0 0;
   }
   &_reverse {
     flex-direction: row-reverse;

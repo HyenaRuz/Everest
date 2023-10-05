@@ -7,7 +7,7 @@
     :batton="{ text: tableBattonData.text, isActive: tableBattonData.isActive }"
   />
   <AmBreadcrumbs class="amBreadcrumbs center" />
-  <main>
+  <main :class="{main: padding}">
     <slot></slot>
   </main>
   <FAQ v-if="props.faqShow" class="faq" />
@@ -20,7 +20,7 @@ import HeaderVue from '../components/Header-Comp.vue'
 import FooterCom from '../components/FooterCom.vue'
 import BannerFooter from '../components/BannerFooter.vue'
 import FAQ from '../components/FAQ.vue'
-import TableOfContents from '../components/TableOfContents.vue'
+import TableOfContents from '../components/TableOfContents'
 import AmBreadcrumbs from '../components/AmBreadcrumbs.vue'
 
 let props = defineProps({
@@ -40,13 +40,20 @@ let props = defineProps({
   },
   tableData: {
     Object
+  },
+  padding:{
+    type: Boolean,
+    default: true
   }
 })
 </script>
 
 <style lang="scss" scoped>
+.main{
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
 .faq {
-  margin-top: 150px;
   margin-bottom: 150px;
 }
 .amBreadcrumbs {
