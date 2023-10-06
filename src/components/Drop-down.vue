@@ -2,31 +2,34 @@
   <div class="box">
     <h3
       class="box__question"
-      @click.prevent="openAnswer"
+      @click="isActive = !isActive"
       :class="{ 'box__question-open': isActive }"
     >
-      {{ props.question }}
+      {{ title }}
     </h3>
-    <p class="box__answer" :class="{ 'box__answer-open': isActive }">{{ props.answer }}</p>
+    <div :style="contentStyle" class="box__content">
+      <p :style="infoStyle" class="box__answer">{{ info }}</p>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { defineProps, ref } from 'vue'
+import { defineProps, ref, computed } from 'vue'
 
-const props = defineProps({
-  question: { String },
-  answer: { String }
+defineProps({
+  title: { String },
+  info: { String }
 })
 
 let isActive = ref(false)
-const openAnswer = () => {
-  if (isActive.value == false) {
-    isActive.value = true
-  } else {
-    isActive.value = false
-  }
-}
+
+const contentStyle = computed(() => {
+  return { 'max-height': isActive.value ? '100px' : 0 }
+})
+
+const infoStyle = computed(() => {
+  return { opacity: isActive.value ? 1 : 0 }
+})
 </script>
 
 <style lang="scss" scoped>
@@ -35,19 +38,19 @@ const openAnswer = () => {
   border-bottom: 1px solid #dfdfdf;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  position: relative;
+  // gap: 30px;
 
   &__question {
     font-size: 1.7rem;
     cursor: pointer;
+    position: relative;
 
     &::after {
       content: '';
       position: absolute;
       width: 23px;
       height: 0px;
-      top: 10px;
+      top: 50%;
       right: 0;
       border-bottom: 2px solid #01d957;
       border-radius: 9999px;
@@ -58,7 +61,7 @@ const openAnswer = () => {
       position: absolute;
       width: 23px;
       height: 0px;
-      top: 10px;
+      top: 50%;
       right: 0;
       border-bottom: 2px solid #01d957;
       border-radius: 9999px;
@@ -76,21 +79,16 @@ const openAnswer = () => {
       }
     }
   }
-  &__answer {
-    pointer-events: none;
-    opacity: 0;
-    height: 0;
-    position: absolute;
-    transition: all 300ms;
-    overflow: hidden;
 
-    &-open {
-      overflow: hidden;
-      position: relative;
-      opacity: 1;
-      height: max-content;
-      transition: all 300ms;
-    }
+  &__content {
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+  }
+  &__answer {
+    margin-top: 30px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
   }
 }
 </style>

@@ -7,10 +7,10 @@
     :batton="{ text: tableBattonData.text, isActive: tableBattonData.isActive }"
   />
   <AmBreadcrumbs class="amBreadcrumbs center" />
-  <main :class="{main: padding}">
+  <main :class="{ main: padding }">
     <slot></slot>
   </main>
-  <FAQ v-if="props.faqShow" class="faq" />
+  <FAQ v-if="props.faqShow" class="faq" :questions="DataQuestions" />
   <BannerFooter v-if="props.bannerShow" />
   <FooterCom />
 </template>
@@ -22,6 +22,7 @@ import BannerFooter from '../components/BannerFooter.vue'
 import FAQ from '../components/FAQ.vue'
 import TableOfContents from '../components/TableOfContents'
 import AmBreadcrumbs from '../components/AmBreadcrumbs.vue'
+import DataQuestions from '../components/data/questionsData'
 
 let props = defineProps({
   bannerShow: {
@@ -41,7 +42,7 @@ let props = defineProps({
   tableData: {
     Object
   },
-  padding:{
+  padding: {
     type: Boolean,
     default: true
   }
@@ -49,7 +50,7 @@ let props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-.main{
+.main {
   padding-top: 150px;
   padding-bottom: 150px;
 }

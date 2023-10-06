@@ -1,8 +1,7 @@
 <template>
-  <DefaultLayout :padding="false"> 
+  <DefaultLayout :padding="false">
     <div class="contact">
-
-      <img class="contact__img" src="../assets/img/img-contacts.png" alt="">
+      <img class="contact__img" src="../assets/img/img-contacts.png" alt="" />
       <div class="contact__holder">
         <h3 class="contact__title">Контакты</h3>
         <div class="contact__address">
@@ -17,15 +16,17 @@
           <div>
             <p class="contact__addressName">МЕССЕНДЖЕРЫ</p>
             <div class="contact__link">
-              <a href="#"><img src="../assets//img/icon-WhatsApp.png" alt=""></a>
-              <a href="#"><img src="../assets//img/icon-twitter.png" alt=""></a>
+              <a href="#"><img src="../assets//img/icon-WhatsApp.png" alt="" /></a>
+              <a href="#"><img src="../assets//img/icon-twitter.png" alt="" /></a>
             </div>
           </div>
         </div>
-  
+
         <div class="contact__form">
-          <p class="contact__formTitle">Оставьте заявку и наш менеджер свяжется с Вами в течении нескольких часов</p>
-          <FormInput/>
+          <p class="contact__formTitle">
+            Оставьте заявку и наш менеджер свяжется с Вами в течении нескольких часов
+          </p>
+          <FormInput />
         </div>
       </div>
     </div>
@@ -33,7 +34,7 @@
 </template>
 
 <script setup>
-import FormInput from '../components/formInput.vue';
+import FormInput from '../components/formInput.vue'
 import DefaultLayout from '../layouts/DefaultLayout.vue'
 </script>
 
@@ -41,14 +42,14 @@ import DefaultLayout from '../layouts/DefaultLayout.vue'
 .contact {
   display: flex;
   justify-content: space-between;
-  &__img{
+  &__img {
     margin-left: -120px;
   }
   &__link {
     display: flex;
     gap: 10px;
   }
-  &__holder{
+  &__holder {
     display: flex;
     flex-direction: column;
     width: 590px;
@@ -57,7 +58,7 @@ import DefaultLayout from '../layouts/DefaultLayout.vue'
     align-items: center;
     position: relative;
   }
-  &__title{
+  &__title {
     margin-left: 70px;
     position: relative;
     align-self: self-start;
@@ -71,15 +72,15 @@ import DefaultLayout from '../layouts/DefaultLayout.vue'
       width: 52px;
     }
   }
-  &__address{
+  &__address {
     display: flex;
     justify-content: space-between;
     width: 100%;
   }
-  &__addressName{
+  &__addressName {
     margin-bottom: 15px;
     font-weight: 900;
-    color: #D2D2D2;
+    color: #d2d2d2;
     letter-spacing: 1.05px;
   }
   &__form {

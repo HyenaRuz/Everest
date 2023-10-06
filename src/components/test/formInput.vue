@@ -29,7 +29,7 @@
 </template>
 
 <script setup>
-import { defineEmits, defineProps} from 'vue'
+import { defineEmits, defineProps } from 'vue'
 
 const props = defineProps({
   name: String,
@@ -48,7 +48,7 @@ const emitValue = (e) => {
   let value = e.target.value
 
   console.log(client)
-  emit('update:'+ e.target.id, value)
+  emit('update:' + e.target.id, value)
 }
 </script>
 

@@ -45,7 +45,7 @@ let client = ref({
   phone: ''
 })
 
-if(props.delete){
+if (props.delete) {
   client.value = undefined
 }
 
@@ -63,8 +63,6 @@ const checkForm = () => {
     // console.log(false)
   }
 }
-
-
 </script>
 
 <style lang="scss" scoped>

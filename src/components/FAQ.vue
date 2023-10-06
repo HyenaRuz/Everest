@@ -4,22 +4,24 @@
     <h3 class="faq__title">Часто задаваемые вопросы</h3>
     <ul class="faq__questions">
       <DropDown
-        :question="'Могу ли я начать торговать?'"
-        :answer="'Хорошо продуманный функционал программы позволяет настроить торговую систему согласно Вашим задачам — внешний вид программы, отсортировать и выбрать необходимые инструменты для торговли, сделать оценку портфеля.'"
+        v-for="question in questions"
+        :key="question.id"
+        :title="question.title"
+        :info="question.info"
       />
-      <DropDown :question="'Какой должен быть стартовый капитал?'" :answer="''" />
-      <DropDown
-        :question="'Может ли резидент другой страны работать с вашей компанией?'"
-        :answer="''"
-      />
-      <DropDown :question="'Насколько защищен я юридически?'" :answer="''" />
-      <DropDown :question="'Сколько часов в день я должен уделять торговле?'" :answer="''" />
     </ul>
   </div>
 </template>
 
 <script setup>
+import { defineProps } from 'vue'
 import DropDown from './Drop-down.vue'
+
+defineProps({
+  questions: {
+    Array
+  }
+})
 </script>
 
 <style lang="scss" scoped>

@@ -7,7 +7,8 @@
     :tableData="tabl"
     :tableBattonData="{ text: 'Оставить заявку', isActive: true }"
   >
-    <InformationBlock class="block1"
+    <InformationBlock
+      class="block1"
       :subject="'КРИПТОВАЛЮТА'"
       :dataInfo="[section1, section2]"
       :picture="imgCryptocurrency_1"
@@ -15,7 +16,8 @@
       :imgCollageLines="true"
     />
 
-    <InformationBlock class="block2" 
+    <InformationBlock
+      class="block2"
       :reverse="true"
       :dataInfo="[section3]"
       :picture="imgCryptocurrency_1"

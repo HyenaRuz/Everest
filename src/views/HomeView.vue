@@ -3,19 +3,17 @@
     :tableShow="true"
     :tableBackgroundImg="img"
     :tableData="tabl"
-    :tableBattonData="{ text: 'Узнать подробнее', isActive: true }">
-
-    <InformationBlock class="block1"
-     :subject="'О НАС'" 
-     :dataInfo="[EverestFinance]" 
-     :buttonInfo="true"
-     :picture="imgHome"
+    :tableBattonData="{ text: 'Узнать подробнее', isActive: true }"
+  >
+    <InformationBlock
+      class="block1"
+      :subject="'О НАС'"
+      :dataInfo="[EverestFinance]"
+      :buttonInfo="true"
+      :picture="imgHome"
     />
 
-    <InformationBlock class="block2"
-     :columnDirection="true"
-     :subject="'МЫ ПРЕДЛАГАЕМ'">
-
+    <InformationBlock class="block2" :columnDirection="true" :subject="'МЫ ПРЕДЛАГАЕМ'">
       <template v-slot:info>
         <InformationBlock__info :widthTitle="800">
           Наши услуги:

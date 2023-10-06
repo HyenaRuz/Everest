@@ -8,18 +8,26 @@
   >
     <p class="informationBlock__subject">{{ subject }}</p>
     <div class="informationBlock__holderInfo">
-      <InformationBlock__info class="informationBlock__info" :button="buttonInfo"  v-for="(info, index) in dataInfo" :key="index" :data="info"/>
+      <InformationBlock__info
+        class="informationBlock__info"
+        :button="buttonInfo"
+        v-for="(info, index) in dataInfo"
+        :key="index"
+        :data="info"
+      />
       <slot></slot>
       <div class="informationBlock__info">
-        <slot  name="info"></slot>
+        <slot name="info"></slot>
       </div>
     </div>
 
-    <HolderImg v-if="picture"
-     :horizontal="imgHorizontal" 
-     :vertical_three_corners="imgVerticalThreeCorners" 
-     :collage__lines="imgCollageLines">
-          <img :src="picture" alt="" />
+    <HolderImg
+      v-if="picture"
+      :horizontal="imgHorizontal"
+      :vertical_three_corners="imgVerticalThreeCorners"
+      :collage__lines="imgCollageLines"
+    >
+      <img :src="picture" alt="" />
     </HolderImg>
     <div class="informationBlock__holderCard" v-if="$slots.holder">
       <slot name="holder"></slot>
@@ -47,21 +55,19 @@ defineProps({
   buttonInfo: {
     type: Boolean
   },
-  picture: {
-  },
+  picture: {},
   imgCollageLines: {
-    type:Boolean
+    type: Boolean
   },
   imgHorizontal: {
-    type:Boolean
+    type: Boolean
   },
   imgVertical: {
-    type:Boolean
+    type: Boolean
   },
   imgVerticalThreeCorners: {
-    type:Boolean
+    type: Boolean
   }
-
 })
 </script>
 
@@ -73,7 +79,7 @@ defineProps({
   align-items: center;
   position: relative;
 
-  &__info{
+  &__info {
     margin-left: 72px;
   }
   &__subject {
