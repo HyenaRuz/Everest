@@ -5,22 +5,43 @@
     :tableShow="true"
     :tableBackgroundImg="img_bg"
     :tableData="tabl"
-    :tableBattonData="{ text: 'Оставить заявку', isActive: true }"
+    :tableButtonData="{ text: 'Оставить заявку', isActive: true }"
   >
+
+  <InformationBlock
+      class="block"
+      :subject="'КРИПТОВАЛЮТА'"
+      :dataInfo="[section1, section2]"
+      :picture="img_1"
+      :imgHorizontal="true"
+      :imgCollageLines="true"
+    />
+
+    <InformationBlock
+      class="block"
+      :reverse="true"
+      :dataInfo="[section3]"
+      :picture="img_2"
+      :imgHorizontal="true"
+    />
   </DefaultLayout>
 </template>
 
 <script setup>
 import img_bg from '../assets/img/bg-img-StockExchangeView.png'
+import img_1 from '../assets/img/img-StockExchange_1.png'
+import img_2 from '../assets/img/img-StockExchange_2.png'
 
 import DefaultLayout from '../layouts/DefaultLayout.vue'
+import InformationBlock from '../components/InformationBlock'
 
-const tabl = {
-  title: 'Фондовая биржа',
-  text: [
-    'Хорошо продуманный функционал программы позволяет настроить торговую систему согласно Вашим задачам — внешний вид программы, отсортировать и выбрать необходимые инструменты для торговли, сделать оценку портфеля.'
-  ]
-}
+import { section1, section2, section3, tabl } from '../components/data/CryptocurrencyData'
+
+
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.block + .block{
+  margin-top: 155px;
+}
+</style>

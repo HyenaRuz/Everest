@@ -8,7 +8,7 @@
       <div class="holder__texts" v-for="(text, index) in props.data.text" :key="index">
         <p class="holder__text">{{ text }}</p>
       </div>
-      <MyButton v-if="batton.isActive">{{ batton.text }}</MyButton>
+      <MyButton v-if="button.isActive">{{ button.text }}</MyButton>
     </div>
   </div>
 </template>
@@ -18,7 +18,7 @@ import MyButton from '../components/MyButton.vue'
 
 let props = defineProps({
   backgroundImg: {},
-  batton: {},
+  button: {},
   data: {
     Object
   }

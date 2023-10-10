@@ -4,7 +4,7 @@
     v-if="tableShow"
     :backgroundImg="tableBackgroundImg"
     :data="tableData"
-    :batton="{ text: tableBattonData.text, isActive: tableBattonData.isActive }"
+    :button="{ text: tableButtonData.text, isActive: tableButtonData.isActive }"
   />
   <AmBreadcrumbs class="amBreadcrumbs center" />
   <main :class="{ main: padding }">
@@ -35,7 +35,7 @@ let props = defineProps({
     Boolean: false
   },
   tableBackgroundImg: {},
-  tableBattonData: {
+  tableButtonData: {
     default: () => ({}),
     type: Object
   },

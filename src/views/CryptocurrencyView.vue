@@ -5,10 +5,10 @@
     :tableShow="true"
     :tableBackgroundImg="img"
     :tableData="tabl"
-    :tableBattonData="{ text: 'Оставить заявку', isActive: true }"
+    :tableButtonData="{ text: 'Оставить заявку', isActive: true }"
   >
     <InformationBlock
-      class="block1"
+      class="block"
       :subject="'КРИПТОВАЛЮТА'"
       :dataInfo="[section1, section2]"
       :picture="imgCryptocurrency_1"
@@ -17,7 +17,7 @@
     />
 
     <InformationBlock
-      class="block2"
+      class="block"
       :reverse="true"
       :dataInfo="[section3]"
       :picture="imgCryptocurrency_1"
@@ -35,7 +35,7 @@ import { section1, section2, section3, tabl } from '../components/data/Cryptocur
 </script>
 
 <style lang="scss" scoped>
-.block2 {
+.block + .block{
   margin-top: 155px;
 }
 </style>
