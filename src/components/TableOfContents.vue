@@ -8,13 +8,13 @@
       <div class="holder__texts" v-for="(text, index) in props.data.text" :key="index">
         <p class="holder__text">{{ text }}</p>
       </div>
-      <MyButton :defaultButton="true" v-if="batton.isActive">{{ batton.text }}</MyButton>
+      <MyButton v-if="batton.isActive">{{ batton.text }}</MyButton>
     </div>
   </div>
 </template>
 
 <script setup>
-import MyButton from '../MyButton.vue'
+import MyButton from '../components/MyButton.vue'
 
 let props = defineProps({
   backgroundImg: {},

@@ -1,5 +1,5 @@
 <template>
-  <ModalWindow class="modalWindow" v-show="data.showModal" @closeModalWindow="closeModal" />
+  <ModalWindow class="modalWindow" v-if="data.showModal" @closeModalWindow="closeModal" />
   <header class="header">
     <RouterLink :to="{ name: 'home' }">
       <img src="../assets/img/Group 23.png" alt="" />
@@ -10,7 +10,7 @@
       <RouterLink :to="{ name: 'services' }">Услуги</RouterLink>
       <RouterLink :to="{ name: 'contacts' }">Контакты</RouterLink>
     </nav>
-    <MyButton @executeMethod="openModal" :defaultButton="true">Обратный звонок</MyButton>
+    <MyButton @executeMethod="openModal">Обратный звонок</MyButton>
   </header>
 </template>
 
@@ -19,6 +19,7 @@ import { RouterLink } from 'vue-router'
 import MyButton from './MyButton.vue'
 import ModalWindow from '../components/ModalWindow.vue'
 import { ref } from 'vue'
+
 
 let data = ref({
   showModal: false
@@ -31,6 +32,7 @@ function openModal() {
 const closeModal = () => {
   data.value.showModal = false
 }
+
 </script>
 
 <style lang="scss" scoped>
@@ -39,21 +41,35 @@ const closeModal = () => {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  min-height: 74px;
 
   .header__control {
     display: flex;
     gap: 70px;
-    margin: 29px 0 29px 0;
-
+    line-height: normal;
+    letter-spacing: 0.14px;
+    height: 100%;
+    align-items: center;
+    // width: 500px;
+    // justify-content: space-between;
+    
     a {
       color: var(--Dark, #1d1b1b);
+      font-weight: 500;
       font-family: Gilroy;
       font-size: 1.4rem;
       font-style: normal;
+      padding: 2px 12px;
+      border-radius: 999px;
+
+      &.router-link-active {
+
+        &.router-link-exact-active {
+          font-weight: 800;
+          border: 1px solid black
+        }
+      }
     }
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: 0.14px;
   }
 }
 </style>

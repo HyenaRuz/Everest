@@ -5,15 +5,15 @@
         <div class="modalWindow__form" v-if="forvShow">
           <h4 class="modalWindow__title">Обратный звонок</h4>
           <FormInput
-            v-model:name="client.name"
-            v-model:email="client.email"
-            v-model:phone="client.phone"
+            @inputValue="checkForm"
+            @submit="onSubmit"
           />
         </div>
         <div class="modalWindow__text" v-else>
           <h4>
             Вы успешно отправили заявку на обратный звонок.
-            <h4></h4>
+          <h4>
+          </h4>
             Мы вас наберем в ближайшее время!
           </h4>
         </div>
@@ -27,39 +27,29 @@
 import FormInput from './formInput.vue'
 import { defineEmits, ref } from 'vue'
 
-let forvShow = true
+let forvShow = ref(true)
 const emit = defineEmits(['closeModalWindow'])
-let client = ref({
-  email: '',
-  name: '',
-  phone: ''
-})
 
-const checkForm = () => {
-  if (
-    client.value.email.length > 0 ||
-    client.value.name.length > 0 ||
-    client.value.phone.length > 0
-  ) {
-    return true
-  } else {
-    return false
-  }
+let value = false
+const checkForm = (inputValue) => {
+  value = inputValue
 }
 
 const closeModal = () => {
-  if (!checkForm()) {
+  if (!value) {
     emit('closeModalWindow')
     return
   }
 
   let goBack = confirm('your changes will not be saved')
   if (goBack) {
-    client.value.email = ''
-    client.value.name = ''
-    client.value.phone = ''
-
     emit('closeModalWindow')
+  }
+}
+
+const onSubmit = (value) => {
+  if (value == true) {
+    forvShow.value = false
   }
 }
 </script>

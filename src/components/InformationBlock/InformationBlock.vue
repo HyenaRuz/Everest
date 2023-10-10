@@ -14,6 +14,7 @@
         v-for="(info, index) in dataInfo"
         :key="index"
         :data="info"
+        :linkButton="linkButton"
       />
       <slot></slot>
       <div class="informationBlock__info">
@@ -67,6 +68,9 @@ defineProps({
   },
   imgVerticalThreeCorners: {
     type: Boolean
+  },
+  linkButton: {
+    String
   }
 })
 </script>

@@ -16,11 +16,11 @@
 </template>
 
 <script setup>
-import HeaderVue from '../components/Header-Comp.vue'
-import FooterCom from '../components/FooterCom.vue'
+import HeaderVue from '../components/DefaultHeader.vue'
+import FooterCom from '../components/DefaultFooter.vue'
 import BannerFooter from '../components/BannerFooter.vue'
 import FAQ from '../components/FAQ.vue'
-import TableOfContents from '../components/TableOfContents'
+import TableOfContents from '../components/TableOfContents.vue'
 import AmBreadcrumbs from '../components/AmBreadcrumbs.vue'
 import DataQuestions from '../components/data/questionsData'
 

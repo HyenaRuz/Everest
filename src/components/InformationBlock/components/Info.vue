@@ -8,12 +8,16 @@
     <div class="info__holderText" v-for="(text, index) in dataInfo.text" :key="index">
       <p class="info__text">{{ text }}</p>
     </div>
-    <MyButton v-if="props.button" :defaultButton="true"> Читать больше </MyButton>
+    
+    <MyButton v-if="props.button" @executeMethod="redirectTo"> Читать больше </MyButton>
   </div>
 </template>
 
 <script setup>
 import MyButton from '@/components/MyButton.vue'
+import { useRouter } from 'vue-router';
+
+const ROUTER = useRouter();
 
 let props = defineProps({
   button: {
@@ -24,10 +28,17 @@ let props = defineProps({
   },
   data: {
     Object
+  },
+  linkButton: {
+    String
   }
 })
 
 let dataInfo = { ...props.data }
+
+const redirectTo = () => {
+  ROUTER.push({ name: props.linkButton })
+}
 
 // console.log(props.data)
 </script>

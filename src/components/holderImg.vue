@@ -1,19 +1,19 @@
 <template>
   <div
     :class="{
-      collage_horizontal: props.horizontal,
-      collage_vertical: props.vertical,
-      'collage_vertical_three-corners': props.vertical_three_corners,
-      'collage-icon': props.icon,
-      'collage-icon-reverse': props.icon_reverse,
-      'collage_horizontal_three-corners': props.horizontal_three_corners
+      'holderImg-horizontal': props.horizontal,
+      'holderImg-vertical': props.vertical,
+      'holderImg-vertical-threeCorners': props.vertical_three_corners,
+      'holderImg-icon': props.icon,
+      'holderImg-icon-reverse': props.icon_reverse,
+      'holderImg-horizontal-threeCorners': props.horizontal_three_corners
     }"
-    class="collage"
+    class="holderImg"
   >
     <slot></slot>
-    <div :class="{ 'collage__lines_turn-on': props.collage__lines }" class="collage__lines">
-      <div class="collage__box"></div>
-      <div class="collage__box"></div>
+    <div :class="{ 'holderImg__lines_turn-on': props.collage__lines }" class="holderImg__lines">
+      <div class="holderImg__box"></div>
+      <div class="holderImg__box"></div>
     </div>
   </div>
 </template>
@@ -52,7 +52,7 @@ let props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-.collage {
+.holderImg {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -60,9 +60,6 @@ let props = defineProps({
   width: fit-content;
   overflow: hidden;
 
-  img {
-    width: 100%;
-  }
   &__lines {
     opacity: 0;
     position: absolute;
@@ -82,36 +79,36 @@ let props = defineProps({
     width: 100%;
     height: 30px;
   }
-}
-.collage_vertical {
-  border-radius: 120px 0px;
-}
-.collage_vertical_three-corners {
-  border-radius: 200px 0px 300px 300px;
-  max-width: 467px;
-  // max-height: 756px;
-}
-.collage_horizontal_three-corners {
-  border-radius: 80px 0px 80px 80px;
-  max-width: 467px;
-  // max-height: 756px;
-}
-.collage_horizontal {
-  border-radius: 80px 0px;
-}
-.collage-icon {
-  width: 278px;
-  height: 171px;
-  opacity: 0.8;
-  background: var(--Green, #01d957);
-  box-shadow: 0px 10px 50px 0px rgba(48, 41, 217, 0.3);
-  display: flex;
-  justify-content: space-between;
-  gap: 0;
-  padding: 50px;
-  border-radius: 80px 0px 80px 80px;
-  &-reverse {
-    border-radius: 80px 80px 80px 0px;
+  &-vertical {
+    border-radius: 120px 0px;
+  }
+  &-vertical-threeCorners {
+    border-radius: 200px 0px 300px 300px;
+    max-width: 467px;
+    // max-height: 756px;
+  }
+  &-horizontal-threeCorners {
+    border-radius: 80px 0px 80px 80px;
+    max-width: 467px;
+    // max-height: 756px;
+  }
+  &-horizontal {
+    border-radius: 80px 0px;
+  }
+  &-icon {
+    width: 278px;
+    height: 171px;
+    opacity: 0.8;
+    background: var(--Green, #01d957);
+    box-shadow: 0px 10px 50px 0px rgba(48, 41, 217, 0.3);
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+    padding: 50px;
+    border-radius: 80px 0px 80px 80px;
+    &-reverse {
+      border-radius: 80px 80px 80px 0px;
+    }
   }
 }
 </style>

@@ -38,7 +38,6 @@ const infoStyle = computed(() => {
   border-bottom: 1px solid #dfdfdf;
   display: flex;
   flex-direction: column;
-  // gap: 30px;
 
   &__question {
     font-size: 1.7rem;

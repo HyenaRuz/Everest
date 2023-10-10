@@ -1,42 +1,84 @@
 <template>
-  <form class="formInput" action="" @submit.prevent="checkForm">
+  <form class="formInput" action="" @submit.prevent="onSubmit" @change="checkForm">
     <input
       class="formInput__input"
       id="name"
       type="text"
       placeholder="Ваше имя"
-      :value="name"
-      @input="$emit('update:name', $event.target.value)"
+      v-model="client.name"
     />
     <input
       class="formInput__input"
       id="email"
       type="email"
       placeholder="Почта"
-      :value="email"
-      @input="$emit('update:email', $event.target.value)"
+      v-model="client.email"
     />
     <input
       class="formInput__input"
       id="phone"
       type="tel"
       placeholder="Телефон(необязательно)"
-      :value="phone"
-      @input="$emit('update:phone', $event.target.value)"
+      v-model="client.phone"
+      onkeypress="return (event.charCode >= 48 && event.charCode <= 57 && /^\d{0,10}$/.test(this.value))"
     />
-    <button type="submit"><p>Отправить</p></button>
+    <!-- <button type="submit"><p>Отправить</p></button> -->
+    <MyButton v-on:execute-method="onSubmit">Отправить</MyButton>
   </form>
 </template>
 
 <script setup>
-import { defineEmits, defineProps } from 'vue'
+import { defineEmits, ref } from 'vue'
+import MyButton from './MyButton.vue';
 
-defineProps({
-  name: String,
-  email: String,
-  phone: String
+const emet = defineEmits(['submit', 'inputValue',])
+
+let client = ref({
+  name: '',
+  email: '',
+  phone: ''
 })
-defineEmits(['update:phone', 'update:email', 'update:name'])
+
+const onSubmit = () => {
+
+  let error = []
+
+  if (client.value.name.length < 1) {
+    error.push("поле имени пустое")
+  }
+  if (!validateEmail(client.value.email)) {
+    error.push("неправильная почта")
+  }
+  if(client.value.phone.length < 10) {
+    error.push("неправильный номер телефона")
+  }
+
+
+  if(error.length >= 1) {
+    console.log(error)
+  } else {
+    console.log(client.value)
+    emet('submit', true)
+    emet('inputValue', false)
+  }
+}
+
+function validateEmail(email) {
+    const re = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+    return re.test(String(email).toLowerCase());
+  }
+
+const checkForm = () => {
+  if (
+    client.value.email.length > 0 ||
+    client.value.name.length > 0 ||
+    client.value.phone.length > 0
+  ) {
+    emet('inputValue', true)
+  } else {
+    emet('inputValue', false)
+  }
+}
 </script>
 
 <style lang="scss" scoped>

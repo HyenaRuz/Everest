@@ -11,6 +11,7 @@
       :dataInfo="[EverestFinance]"
       :buttonInfo="true"
       :picture="imgHome"
+      :linkButton="'aboutUs'"
     />
 
     <InformationBlock class="block2" :columnDirection="true" :subject="'МЫ ПРЕДЛАГАЕМ'">
@@ -54,21 +55,7 @@ import cardLink from '../components/cardLink.vue'
 import InformationBlock from '../components/InformationBlock'
 import InformationBlock__info from '../components/InformationBlock/components/Info.vue'
 import { RouterLink } from 'vue-router'
-
-const EverestFinance = {
-  title: 'Everest Finance',
-  text: [
-    'Хорошо продуманный функционал программы позволяет настроить торговую систему согласно. Вашим задачам — внешний вид программы, отсортировать и выбрать необходимые инструменты для торговли, сделать оценку портфеля.',
-    'Программа ИИС действует с начала 2015 года, а на сегодня физическими лицами уже открыто более 3 миллионов инвестсчетов. При значительном объеме активов на ИИС более 246 миллиардов рублей появляется основание задуматься над необходимостью открытия ИИС и выбора надежного партера для этой задачи.',
-    'При инвестировании средств через ИИС вы не просто освободитесь от уплаты НДФЛ, но и сможете претендовать на возврат 13% от уплаченного ранее налога.'
-  ]
-}
-const tabl = {
-  title: 'Финансовые решения для достижения ваших целей',
-  text: [
-    'Хорошо продуманный функционал программы позволяет настроить торговую систему согласно Вашим задачам — внешний вид программы, отсортировать и выбрать необходимые инструменты для торговли, сделать оценку портфеля.'
-  ]
-}
+import { EverestFinance, tabl } from '../components/data/HomeData'
 </script>
 
 <style lang="scss" scoped>
@@ -84,4 +71,6 @@ a {
   line-height: 114.8%; /* 27.552px */
   letter-spacing: 0.24px;
 }
+
+
 </style>

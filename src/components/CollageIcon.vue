@@ -33,8 +33,8 @@ import { defineProps } from 'vue'
 
 defineProps({
   data: {
-      type: Array
-    }
+    type: Array
+  }
 })
 </script>
 

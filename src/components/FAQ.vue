@@ -15,7 +15,7 @@
 
 <script setup>
 import { defineProps } from 'vue'
-import DropDown from './Drop-down.vue'
+import DropDown from './DropDown.vue'
 
 defineProps({
   questions: {
