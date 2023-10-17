@@ -3,7 +3,7 @@
     :tableShow="true"
     :tableBackgroundImg="img"
     :tableData="tabl"
-    :tableBattonData="{ text: 'Узнать подробнее', isActive: true }"
+    :tableButtonData="{ text: 'Узнать подробнее', isActive: true }"
   >
     <InformationBlock
       class="block1"

@@ -1,5 +1,5 @@
 <template>
-  <div class="holder" :style="{ height: props.height + 'px' }">
+  <div class="holder">
     <img :src="props.backgroundImg" alt="" />
     <div class="holder__info center">
       <h2 class="holder__title">
@@ -18,7 +18,10 @@ import MyButton from '../components/MyButton.vue'
 
 let props = defineProps({
   backgroundImg: {},
-  button: {},
+  button: {
+    isActive: Boolean,
+    text: String
+  },
   data: {
     Object
   }
