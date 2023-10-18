@@ -2,7 +2,7 @@
   <ModalWindow class="modalWindow" v-if="data.showModal" @closeModalWindow="closeModal" />
   <header class="header">
     <RouterLink :to="{ name: 'home' }">
-      <img src="../assets/img/Group 23.png" alt="" />
+      <img src="../assets/img/Group_23.png" alt="" />
     </RouterLink>
     <nav class="header__control">
       <RouterLink :to="{ name: 'home' }">Главная</RouterLink>

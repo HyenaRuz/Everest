@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="footer__holder">
       <RouterLink :to="{ name: 'home' }">
-        <img src="../assets/img/Group 23.png" alt="" />
+        <img src="../assets/img/Group_23.png" alt="" />
       </RouterLink>
       <div class="footer__control">
         <RouterLink :to="{ name: 'home' }">Главная</RouterLink>
