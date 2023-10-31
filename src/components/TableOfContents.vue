@@ -60,4 +60,12 @@ let props = defineProps({
     width: 590px;
   }
 }
+
+@media screen and (max-width: 1440px){
+  .holder{
+    img {
+      width: 100%;
+    }
+  }
+}
 </style>

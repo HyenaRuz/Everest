@@ -15,21 +15,31 @@
         :key="index"
         :data="info"
         :linkButton="linkButton"
-      />
+      >
+      <HolderImg
+      v-if="picture && width <= 1136"
+      :horizontal="imgHorizontal"
+      :vertical_three_corners="imgVerticalThreeCorners"
+      :collage__lines="imgCollageLines"
+      >
+       <img :src="picture" alt="" />
+      </HolderImg>
+      </InformationBlock__info>
       <slot></slot>
       <div class="informationBlock__info">
         <slot name="info"></slot>
       </div>
     </div>
-
-    <HolderImg
-      v-if="picture"
-      :horizontal="imgHorizontal"
-      :vertical_three_corners="imgVerticalThreeCorners"
-      :collage__lines="imgCollageLines"
-    >
-      <img :src="picture" alt="" />
-    </HolderImg>
+    <div v-if="width >= 1136">
+      <HolderImg
+        v-if="picture"
+        :horizontal="imgHorizontal"
+        :vertical_three_corners="imgVerticalThreeCorners"
+        :collage__lines="imgCollageLines"
+      >
+        <img :src="picture" alt="" />
+      </HolderImg>
+    </div>
     <div class="informationBlock__holderCard" v-if="$slots.holder">
       <slot name="holder"></slot>
     </div>
@@ -39,7 +49,9 @@
 <script setup>
 import InformationBlock__info from './components/Info.vue'
 import HolderImg from '@/components/holderImg.vue'
+import {useResizeWidth} from '../../composables/useResizeWidth'
 
+let {width} = useResizeWidth();
 defineProps({
   reverse: {
     Boolean: false
@@ -116,5 +128,10 @@ defineProps({
     justify-content: space-between;
     width: 100%;
   }
+}
+
+@media  screen and (max-width: 1136px){
+  .informationBlock{
+  flex-direction: column;}
 }
 </style>

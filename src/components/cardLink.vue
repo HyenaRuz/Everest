@@ -1,6 +1,6 @@
 <template>
   <div class="holder">
-    <img class="holder__logo" src="../assets/img/Group 23.png" alt="" />
+    <img class="holder__logo" src="../assets/img/Group_23.png" alt="" />
     <img class="holder__img" :src="props.picture" alt="" />
     <div class="holder__info">
       <RouterLink class="holder__title" :to="{ name: props.cardLink }">
