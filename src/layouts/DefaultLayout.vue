@@ -13,7 +13,8 @@
   </main>
   <FAQ v-if="props.faqShow" class="faq" :questions="DataQuestions" />
   <BannerFooter v-if="props.bannerShow" />
-  <FooterCom />
+  <FooterCom v-if="width >= 1000"/>
+  <MobileFooter v-if="width <= 1000"/>
 </template>
 
 <script setup>
@@ -26,6 +27,7 @@ import AmBreadcrumbs from '../components/AmBreadcrumbs.vue'
 import DataQuestions from '../components/data/questionsData'
 import MobileHeader from '../components/Header/MobileHeader.vue'
 import {useResizeWidth} from '@/composables/useResizeWidth'
+import MobileFooter from '../components/Footer/MobileFooter.vue'
 
 let {width} = useResizeWidth();
 
