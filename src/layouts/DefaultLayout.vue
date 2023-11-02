@@ -1,5 +1,6 @@
 <template>
-  <HeaderVue />
+  <HeaderVue v-if="width >= 1000"/>
+  <MobileHeader v-if="width <= 1000"/>
   <TableOfContents
     v-if="tableShow"
     :backgroundImg="tableBackgroundImg"
@@ -16,13 +17,17 @@
 </template>
 
 <script setup>
-import HeaderVue from '../components/DefaultHeader.vue'
-import FooterCom from '../components/DefaultFooter.vue'
+import HeaderVue from '../components/Header/DefaultHeader.vue'
+import FooterCom from '../components/Footer/DefaultFooter.vue'
 import BannerFooter from '../components/BannerFooter.vue'
 import FAQ from '../components/FAQ.vue'
 import TableOfContents from '../components/TableOfContents.vue'
 import AmBreadcrumbs from '../components/AmBreadcrumbs.vue'
 import DataQuestions from '../components/data/questionsData'
+import MobileHeader from '../components/Header/MobileHeader.vue'
+import {useResizeWidth} from '@/composables/useResizeWidth'
+
+let {width} = useResizeWidth();
 
 let props = defineProps({
   bannerShow: {
@@ -60,5 +65,16 @@ let props = defineProps({
 .amBreadcrumbs {
   position: absolute;
   top: 95px;
+}
+
+@media screen and (max-width: 1136px){
+  .main{
+  padding-top: 70px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+  }
 }
 </style>

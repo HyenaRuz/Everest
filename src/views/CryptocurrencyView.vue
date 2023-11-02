@@ -38,4 +38,10 @@ import { section1, section2, section3, tabl } from '../components/data/Cryptocur
 .block + .block{
   margin-top: 155px;
 }
+
+@media screen and (max-width: 1136px){
+  .block + .block {
+    margin: 0;
+  }
+}
 </style>

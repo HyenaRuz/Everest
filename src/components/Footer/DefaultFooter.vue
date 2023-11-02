@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="footer__holder">
       <RouterLink :to="{ name: 'home' }">
-        <img src="../assets/img/Group_23.png" alt="" />
+        <img src="@/assets/img/Group_23.png" alt="" />
       </RouterLink>
       <div class="footer__control">
         <RouterLink :to="{ name: 'home' }">Главная</RouterLink>
@@ -13,10 +13,10 @@
       </div>
       <div class="link">
         <a href="">
-          <img src="../assets/img/icon-twitter.png" alt="" />
+          <img src="@/assets/img/icon-twitter.png" alt="" />
         </a>
         <a href="">
-          <img src="../assets/img/icon-WhatsApp.png" alt="" />
+          <img src="@/assets/img/icon-WhatsApp.png" alt="" />
         </a>
       </div>
     </div>

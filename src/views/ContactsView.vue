@@ -1,7 +1,7 @@
 <template>
   <DefaultLayout :padding="false">
     <div class="contact">
-      <img class="contact__img" src="../assets/img/img-contacts.png" alt="" />
+      <img class="contact__img" src="../assets/img/img-contacts.png" alt="" v-if="width >= 1250" />
       <div class="contact__holder">
         <h3 class="contact__title">Контакты</h3>
         <div class="contact__address">
@@ -36,14 +36,20 @@
 <script setup>
 import FormInput from '../components/formInput.vue'
 import DefaultLayout from '../layouts/DefaultLayout.vue'
+import {useResizeWidth} from '@/composables/useResizeWidth'
+
+let {width} = useResizeWidth();
 </script>
 
 <style lang="scss" scoped>
 .contact {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  width: 100%;
   &__img {
-    margin-left: -120px;
+    position: absolute;
+    top: 0;
+    right: calc(50vw + 50px);
   }
   &__link {
     display: flex;
@@ -54,6 +60,7 @@ import DefaultLayout from '../layouts/DefaultLayout.vue'
     flex-direction: column;
     width: 590px;
     padding-top: 55px;
+    padding-bottom: 94px;
     gap: 80px;
     align-items: center;
     position: relative;
@@ -104,4 +111,15 @@ import DefaultLayout from '../layouts/DefaultLayout.vue'
     }
   }
 }
+
+
+@media  screen and (max-width: 1250px){
+  .contact{
+    justify-content: center
+  }
+  .contact__img{
+    display: none;
+  }
+}
+
 </style>

@@ -71,6 +71,9 @@ a {
   line-height: 114.8%; /* 27.552px */
   letter-spacing: 0.24px;
 }
-
-
+@media screen and (max-width: 1136px){
+  .block2 {
+    margin: 0;
+  }
+}
 </style>

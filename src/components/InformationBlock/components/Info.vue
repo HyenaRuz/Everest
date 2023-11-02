@@ -1,10 +1,11 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="info">
-    <h3 class="info__title" :style="{ width: props.widthTitle + 'px' }">
+    <h3 class="info__title" :style="{ width: styleTitle() }">
       {{ dataInfo.title }}
       <slot></slot>
     </h3>
+    <slot name="mobileImg"></slot>
     <div class="info__holderText" v-for="(text, index) in dataInfo.text" :key="index">
       <p class="info__text">{{ text }}</p>
     </div>
@@ -16,6 +17,10 @@
 <script setup>
 import MyButton from '@/components/MyButton.vue'
 import { useRouter } from 'vue-router';
+import { computed, ref } from 'vue';
+import {useResizeWidth} from '@/composables/useResizeWidth'
+
+let {width} = useResizeWidth();
 
 const ROUTER = useRouter();
 
@@ -40,7 +45,16 @@ const redirectTo = () => {
   ROUTER.push({ name: props.linkButton })
 }
 
-// console.log(props.data)
+const styleTitle = () => {
+  let titleWidth = ref( props.widthTitle )
+  const widthResult = computed(() => {return titleWidth.value + 'px'})
+
+  if ( width.value <= 1136){
+    return 'auto'
+  } else {
+    return widthResult.value
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -48,7 +62,6 @@ const redirectTo = () => {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: min-content;
 
   &__title {
     &::before {
@@ -66,8 +79,10 @@ const redirectTo = () => {
     gap: 25px;
     width: 475px;
   }
-  // &__text {
-
-  // }
+}
+@media screen and (max-width: 1136px){
+  .info__holderText{
+    width: 100%;
+  }
 }
 </style>

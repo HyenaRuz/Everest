@@ -2,7 +2,7 @@
   <ModalWindow class="modalWindow" v-if="data.showModal" @closeModalWindow="closeModal" />
   <header class="header">
     <RouterLink :to="{ name: 'home' }">
-      <img src="../assets/img/Group_23.png" alt="" />
+      <img src="@/assets/img/Group_23.png" alt="" />
     </RouterLink>
     <nav class="header__control">
       <RouterLink :to="{ name: 'home' }">Главная</RouterLink>
@@ -16,8 +16,8 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
-import MyButton from './MyButton.vue'
-import ModalWindow from '../components/ModalWindow.vue'
+import MyButton from '@/components/MyButton.vue'
+import ModalWindow from '@/components/ModalWindow.vue'
 import { ref } from 'vue'
 
 
@@ -50,8 +50,6 @@ const closeModal = () => {
     letter-spacing: 0.14px;
     height: 100%;
     align-items: center;
-    // width: 500px;
-    // justify-content: space-between;
     
     a {
       color: var(--Dark, #1d1b1b);

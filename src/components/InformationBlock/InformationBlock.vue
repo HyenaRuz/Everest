@@ -6,8 +6,9 @@
       informationBlock_column: columnDirection
     }"
   >
-    <p class="informationBlock__subject">{{ subject }}</p>
+    <p class="informationBlock__subject" v-if="width >= 1136 && subject">{{ subject }}</p>
     <div class="informationBlock__holderInfo">
+      <p class="informationBlock__subject" v-if="width <= 1136  && subject">{{ subject }}</p>
       <InformationBlock__info
         class="informationBlock__info"
         :button="buttonInfo"
@@ -16,7 +17,7 @@
         :data="info"
         :linkButton="linkButton"
       >
-      <HolderImg
+      <HolderImg class="informationBlock__imgMobile"
       v-if="picture && width <= 1136"
       :horizontal="imgHorizontal"
       :vertical_three_corners="imgVerticalThreeCorners"
@@ -26,7 +27,7 @@
       </HolderImg>
       </InformationBlock__info>
       <slot></slot>
-      <div class="informationBlock__info">
+      <div class="informationBlock__info" v-if="$slots.info">
         <slot name="info"></slot>
       </div>
     </div>
@@ -49,9 +50,10 @@
 <script setup>
 import InformationBlock__info from './components/Info.vue'
 import HolderImg from '@/components/holderImg.vue'
-import {useResizeWidth} from '../../composables/useResizeWidth'
+import {useResizeWidth} from '@/composables/useResizeWidth'
 
 let {width} = useResizeWidth();
+
 defineProps({
   reverse: {
     Boolean: false
@@ -130,8 +132,32 @@ defineProps({
   }
 }
 
-@media  screen and (max-width: 1136px){
+@media screen and (max-width: 1136px){
   .informationBlock{
-  flex-direction: column;}
+    flex-direction: column;
+    width: min-content;
+  }
+  .informationBlock__imgMobile {
+    margin: 40px 0 40px 0;
+  }
+  .informationBlock__info{
+    margin: 0;
+  }
+  .informationBlock__subject{
+    position: relative;
+  }
+  .informationBlock__holderInfo{
+    margin: 0;
+    gap: 15px;
+  }
+  .informationBlock__holderCard{
+    align-self: center;
+    flex-direction: column;
+    gap: 30px;
+    width: max-content;
+  }
+  .informationBlock_column{
+    align-items: center;
+  }
 }
 </style>
