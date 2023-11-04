@@ -51,6 +51,7 @@ defineProps({
   }
   &__question {
     font-size: 1.7rem;
+    padding-right: 24px;
 
     &::after {
       content: '';
@@ -73,6 +74,12 @@ defineProps({
       border-radius: 9999px;
       transform: rotate(-90deg);
     }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .faq__questions{
+    width: 100%;
   }
 }
 </style>

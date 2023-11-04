@@ -117,4 +117,23 @@ import FormInput from './formInput.vue'
     }
   }
 }
+
+@media screen and (max-width: 1250px) {
+  .banner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .banner__picture{
+    position: relative;
+    top: auto;
+    right: auto;
+  }
+  .banner__info{
+    order: 1;
+  }
+}
 </style>

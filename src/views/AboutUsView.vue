@@ -4,7 +4,6 @@
       class="informationBlock"
       :subject="'НАШЕ ПРЕИМУЩЕСТВО - ЭТО'"
       :dataInfo="[section1]"
-      :picture="imgAboutUs_1"
       :imgHorizontal="true"
     />
 
@@ -12,7 +11,6 @@
       class="informationBlock"
       :reverse="true"
       :dataInfo="[section2]"
-      :picture="imgAboutUs_2"
       :imgVerticalThreeCorners="true"
     >
       <CollageIcon :data="[icon1, icon2, icon3, icon4]" />
@@ -22,8 +20,6 @@
 
 <script setup>
 import img from '../assets/img/img-Title2.png'
-import imgAboutUs_1 from '../assets/img/img-AboutUs_1.png'
-import imgAboutUs_2 from '../assets/img/img-AboutUs-2.png'
 import DefaultLayout from '../layouts/DefaultLayout.vue'
 import InformationBlock from '../components/InformationBlock'
 import CollageIcon from '../components/CollageIcon.vue'

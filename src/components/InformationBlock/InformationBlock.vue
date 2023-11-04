@@ -6,39 +6,44 @@
       informationBlock_column: columnDirection
     }"
   >
-    <p class="informationBlock__subject" v-if="width >= 1136 && subject">{{ subject }}</p>
+    <p class="informationBlock__subject" v-if="width > 1136 && subject">{{ subject }}</p>
     <div class="informationBlock__holderInfo">
       <p class="informationBlock__subject" v-if="width <= 1136  && subject">{{ subject }}</p>
-      <InformationBlock__info
-        class="informationBlock__info"
-        :button="buttonInfo"
-        v-for="(info, index) in dataInfo"
-        :key="index"
-        :data="info"
-        :linkButton="linkButton"
-      >
-      <HolderImg class="informationBlock__imgMobile"
-      v-if="picture && width <= 1136"
-      :horizontal="imgHorizontal"
-      :vertical_three_corners="imgVerticalThreeCorners"
-      :collage__lines="imgCollageLines"
-      >
-       <img :src="picture" alt="" />
-      </HolderImg>
-      </InformationBlock__info>
+      
+      <template  v-if="width > 1136">
+        <InformationBlock__info class="informationBlock__info"
+          :button="buttonInfo"
+          v-for="(info, index) in dataInfo"
+          :key="index"
+          :data="info"
+          :linkButton="linkButton"/>
+      </template>
+
+      <template  v-if="width <= 1136">
+        <MobileInfo class="informationBlock__info"
+          :button="buttonInfo"
+          v-for="(info, index) in dataInfo"
+          :key="index"
+          :data="info"
+          :linkButton="linkButton"
+          :imgHorizontal="imgHorizontal"
+          :imgVerticalThreeCorners="imgVerticalThreeCorners"
+          :imgCollageLines="imgCollageLines">
+        </MobileInfo>
+      </template>
+
       <slot></slot>
       <div class="informationBlock__info" v-if="$slots.info">
         <slot name="info"></slot>
       </div>
     </div>
-    <div v-if="width >= 1136">
+    <div v-if="dataInfo && width > 1136">
       <HolderImg
-        v-if="picture"
         :horizontal="imgHorizontal"
         :vertical_three_corners="imgVerticalThreeCorners"
         :collage__lines="imgCollageLines"
       >
-        <img :src="picture" alt="" />
+      <img :src="dataInfo[0].img" alt="" />
       </HolderImg>
     </div>
     <div class="informationBlock__holderCard" v-if="$slots.holder">
@@ -51,6 +56,7 @@
 import InformationBlock__info from './components/Info.vue'
 import HolderImg from '@/components/holderImg.vue'
 import {useResizeWidth} from '@/composables/useResizeWidth'
+import MobileInfo from './components/MobileInfo.vue';
 
 let {width} = useResizeWidth();
 

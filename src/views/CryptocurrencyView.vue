@@ -28,7 +28,6 @@
 
 <script setup>
 import img from '../assets/img/img-Title3.png'
-import imgCryptocurrency_1 from '../assets/img/img-cryptocurrency_1.png'
 import InformationBlock from '../components/InformationBlock'
 import DefaultLayout from '../layouts/DefaultLayout.vue'
 import { section1, section2, section3, tabl } from '../components/data/CryptocurrencyData.js'

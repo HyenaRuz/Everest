@@ -10,7 +10,6 @@
       :subject="'О НАС'"
       :dataInfo="[EverestFinance]"
       :buttonInfo="true"
-      :picture="imgHome"
       :linkButton="'aboutUs'"
     />
 
@@ -46,7 +45,6 @@
 
 <script setup>
 import img from '../assets/img/Rectangle3.png'
-import imgHome from '../assets/img/img-home-1.png'
 import imgCard1 from '../assets/img/img-card1.png'
 import imgCard2 from '../assets/img/img-card2.png'
 

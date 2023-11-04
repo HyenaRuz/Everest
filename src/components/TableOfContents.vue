@@ -33,6 +33,7 @@ let props = defineProps({
   display: flex;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 
   &__amBreadcrumbs {
     position: absolute;
@@ -61,11 +62,9 @@ let props = defineProps({
   }
 }
 
-@media screen and (max-width: 1440px){
+@media screen and (max-width: 1000px){
   .holder{
-    img {
-      width: 100%;
-    }
+    width: 100vw;
   }
 }
 </style>

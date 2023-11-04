@@ -1,5 +1,5 @@
 <template>
-  <HeaderVue v-if="width >= 1000"/>
+  <HeaderVue v-if="width > 1000"/>
   <MobileHeader v-if="width <= 1000"/>
   <TableOfContents
     v-if="tableShow"
@@ -13,7 +13,7 @@
   </main>
   <FAQ v-if="props.faqShow" class="faq" :questions="DataQuestions" />
   <BannerFooter v-if="props.bannerShow" />
-  <FooterCom v-if="width >= 1000"/>
+  <FooterCom v-if="width > 1000"/>
   <MobileFooter v-if="width <= 1000"/>
 </template>
 
